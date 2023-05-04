@@ -21,11 +21,12 @@ Quinto projeto desenvolvido para o Bootcamp de Desenvolvimento Web da [@Laborat�
   Desenvolvedoras: <br>
   <br>
   <br>
-  <img align="center" alt="AnaLeticia" height="450" width="290" src="https://user-images.githubusercontent.com/30864314/236205702-abedc278-7181-49d2-9bb9-7d5620aa316a.png" />
-   <img align="center" alt="Angelina" height="450" width="290" src="https://user-images.githubusercontent.com/30864314/236205643-6a04cede-616d-4847-bac5-21995572af90.png" />
+  <img align="center" alt="AnaLeticia" height="450" width="290" src="https://user-images.githubusercontent.com/30864314/236303275-73a05fbd-8d12-49bc-a533-181a6e7e0152.png" />
+   <img align="center" alt="Angelina" height="450" width="290" src="https://user-images.githubusercontent.com/30864314/236303365-71384765-eb5d-45d7-b0fb-51164287d866.png"/>
 
 </div>
  
 ***
+
 
 Em construção :construction:
