@@ -6,8 +6,7 @@ export const Container = styled.div`
     align-items: center;
     background-color: ${props => props.backgroundColor};
     width: 100vw;
-    height: 100vh;
-
+    min-height: 100vh;
 `
 export const H1 = styled.h1`
     color: ${props => props.color};
@@ -26,9 +25,10 @@ export const Input = styled.input`
     padding-left:10px;
     box-sizing:border-box;
     outline: none;
+    opacity: ${props => props.opacity};
 
     &::placeholder{
-        color: #451e12; 
+        color: ${props => props.color}; 
     }
 `;
 
@@ -50,7 +50,7 @@ export const Button = styled.button`
     font-weight: 800;
 
     &:hover{
-        background-color:#E48B26;
+        background-color: #E48B26;
         color: black;
     }
     &:active{
@@ -65,8 +65,33 @@ export const MessageError = styled.p`
     display: none;
 `;
 
+
 export const DivFlex = styled.div`
     display: flex;
     flex-direction: column;
     gap: 10px;
 `
+
+export const TextRegister = styled.p`
+    color: ${props => props.color};
+    font-weight: 700;
+    font-size: 18px;
+    align-self: self-start;
+`;
+
+export const Select = styled.select`
+    background-color: #451E12;
+    color: #E8B25A;
+    opacity: 0.6;
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 16px;
+
+    /* &::placeholder{
+        color: ${props => props.color}
+    } */
+`;
+
+

@@ -1,14 +1,16 @@
 import React from "react";
 import Login from "./signIn/Login";
-import HomeScreen from "./signIn/homeScreen";
+
+import Register from "./signIn/Register";
 
 function App() {
   return (
-    <>
-      <HomeScreen/>
+  <>
+    <HomeScreen/>
     <Login/>
-    </>
-    
+    <Register/>
+  </>
+
   )
 }
 
