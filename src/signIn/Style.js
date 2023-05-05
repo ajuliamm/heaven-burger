@@ -65,6 +65,13 @@ export const MessageError = styled.p`
     display: none;
 `;
 
+
+export const DivFlex = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+`
+
 export const TextRegister = styled.p`
     color: ${props => props.color};
     font-weight: 700;
@@ -86,4 +93,5 @@ export const Select = styled.select`
         color: ${props => props.color}
     } */
 `;
+
 
