@@ -64,3 +64,9 @@ export const MessageError = styled.p`
     font-size: 18px;
     display: none;
 `;
+
+export const DivFlex = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+`
