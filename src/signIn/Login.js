@@ -12,12 +12,10 @@ export default function Login() {
    return( 
    <Container 
    backgroundColor ='#451e12'>
-        <img 
-        width={400}
-        src={LogoOrange}/>
-        <H1
-        color='#E48B26'
-        >LOGIN</H1>
+        <img width={400} src={LogoOrange}/>
+        <H1 color='#E48B26'>
+            LOGIN
+        </H1>
         <Form>
             <Input 
             backgroundColor = '#C18050'
