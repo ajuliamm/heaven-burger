@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'
 import { 
     H1, 
     Form,
@@ -8,7 +9,14 @@ import {
     Container } from './Style.js';
 import LogoOrange from '../img/LogoOrange.svg';
 
+
 export default function Login() {
+    
+    const navigate = useNavigate()
+
+    function changeToHomeScreen () {
+        navigate('/')
+    }
    return( 
    <Container 
    backgroundColor ='#451e12'>
@@ -20,7 +28,7 @@ export default function Login() {
             <Input 
             backgroundColor = '#C18050'
             placeholder='Email'
-            type='text'
+            type='email'
             color='#451E12'/>
 
             <MessageError
@@ -36,10 +44,16 @@ export default function Login() {
             color='#E48B26'>
                 Senha incorreta
             </MessageError>
-            <Button
+            <Button 
             color='#E48B26'
             backgroundColor = 'rgb(176, 136, 90, 17%)'> 
                 ENTRAR
+            </Button>
+            <Button 
+            onClick={changeToHomeScreen}
+            color='#E48B26'
+            backgroundColor = 'rgb(176, 136, 90, 17%)'> 
+                VOLTAR
             </Button>
         </Form>
     </Container>
