@@ -10,7 +10,6 @@ root.render(
     <MyRoutes/>
     <GlobalStyle/>
   </>
-
 );
 
 

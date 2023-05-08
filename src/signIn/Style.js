@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
@@ -63,7 +62,9 @@ export const MessageError = styled.p`
     color: ${props => props.color};
     font-weight: 700;
     font-size: 18px;
-    display: none;
+    &.hidden-p{
+        display: none;
+    }
 `;
 
 
