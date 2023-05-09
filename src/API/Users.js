@@ -1,7 +1,6 @@
 const API_URL = 'http://localhost:8080';
 
 export const postLogin = (typedEmail, typedPassword) => {
-    console.log(typedEmail, typedPassword)
     return fetch(`${API_URL}/login`, {
     // Tipo da requisicao
     method: "POST",
