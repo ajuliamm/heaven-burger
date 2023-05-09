@@ -1,15 +1,16 @@
 import React, {useRef} from 'react';
 import { useNavigate } from 'react-router-dom'
-import { 
+import LogoOrange from '../img/LogoOrange.svg';
+import { postLogin } from '../API/Users.js';
+import { handleError } from '../Errors/Errors.js';
+import {
     H1, 
     Form,
+    Image,
     Input, 
     Button, 
     MessageError, 
     Container } from './Style.js';
-
-import LogoOrange from '../img/LogoOrange.svg';
-import { postLogin } from '../API/Users.js';
 
 export default function Login() {
     
@@ -23,7 +24,7 @@ export default function Login() {
     const password = useRef();
     const msgEmptyFild = useRef();
     const msgEmailInvalid = useRef();
-    const msgErrorPassword = useRef();
+    const msgErrorLogin = useRef();
 
     // const [user , setUser] = useState("");
     
@@ -32,22 +33,20 @@ export default function Login() {
      
         if(email.current.value === '' || password.current.value === ''){
             msgEmptyFild.current.classList.remove('hidden-p')
+            msgErrorLogin.current.classList.add('hidden-p');
         } else {
+            msgEmptyFild.current.classList.add('hidden-p')
             postLogin(email.current.value, password.current.value)
-            .then(async (response) => {
-                console.log(response);
-            
-              console.log(await response.json())
+            .then(async (response) => {        
+               
                 if(response.status === 400){
-                    if(await response.json() === 'Email format is invalid'){
-                        msgEmailInvalid.current.classList.remove('hidden-p');
-                        return console.log('Formato de email inválido');
-                    }
-                    return msgErrorPassword.current.classList.remove('hidden-p');
-                } 
-                else {
-                    return console.log('erro');
+                    const msgErro = handleError(await response.json());
+                    msgErrorLogin.current.textContent = msgErro
+                    return msgErrorLogin.current.classList.remove('hidden-p');
+                }else{
+                    navigate('/HomeWaiter')
                 }
+               
             })
             .catch(error => console.log(error));
         }   
@@ -56,7 +55,7 @@ export default function Login() {
    return( 
     <Container 
     backgroundColor ='#451e12'>
-            <img width={400} src={LogoOrange}/>
+            <Image width={400} alt='Logo-heaven-bueguer' src={LogoOrange}/>
             <H1 color='#E48B26'>
                 LOGIN
             </H1>
@@ -68,21 +67,14 @@ export default function Login() {
                 placeholder='Email'
                 type='email'
                 color='#451E12'/>
-
-                <MessageError ref={msgEmailInvalid}
-                className='hidden-p'
-                color='#E48B26'>
-                    Email inválido
-                </MessageError>
                 <Input ref={password}
                 color='#451e12'
                 placeholder='Senha' 
                 type='password' 
                 backgroundColor = '#C18050'/>
-                <MessageError ref={msgErrorPassword}
+                <MessageError ref={msgErrorLogin}
                 className='hidden-p'
                 color='#E48B26'>
-                    Senha incorreta
                 </MessageError>
                 <MessageError ref={msgEmptyFild}
                 className='hidden-p'

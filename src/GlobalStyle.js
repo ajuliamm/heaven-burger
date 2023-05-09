@@ -8,5 +8,4 @@ export default createGlobalStyle`
     font-family: 'Inter', sans-serif;
     text-decoration: none;
 }
-
 `

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import {
     H1,
     Form,
+    Image,
     Input,
     Button,
     Select,
@@ -32,7 +33,7 @@ export default function Register() {
 
     return (   
     <Container backgroundColor = '#E99331'>
-        <img width={400} src={LogoBrown}/>
+        <Image alt='Logo-heaven-bueguer' width={400} src={LogoBrown}/>
         <H1 color='#64300F'>
             CADASTRAR
         </H1>

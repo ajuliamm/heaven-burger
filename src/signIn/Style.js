@@ -8,6 +8,9 @@ export const Container = styled.div`
     width: 100vw;
     min-height: 100vh;
 `
+export const Image = styled.img`
+`;
+
 export const H1 = styled.h1`
     color: ${props => props.color};
     margin-bottom: 60px;
