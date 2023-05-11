@@ -10,7 +10,7 @@ import {
     Select,
     TextRegister,
     Container } from './Style.js';
-import LogoBrown from '../img/LogoBrown.svg';
+import LogoBrown from '../img/Brown2.png';
 import { postRegister } from '../API/Users.js';
 
 export default function Register() {
@@ -33,7 +33,7 @@ export default function Register() {
 
     return (   
     <Container backgroundColor = '#E99331'>
-        <Image alt='Logo-heaven-bueguer' width={400} src={LogoBrown}/>
+        <Image alt='Logo-heaven-bueguer' src={LogoBrown}/>
         <H1 color='#64300F'>
             CADASTRAR
         </H1>

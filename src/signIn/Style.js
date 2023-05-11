@@ -4,16 +4,31 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     background-color: ${props => props.backgroundColor};
     width: 100vw;
     min-height: 100vh;
+
+    
 `
 export const Image = styled.img`
+    width: 300px;
+
+    @media(min-width: 670px) {
+        width: 400px;
+    }
+`;
+export const ImageBurger = styled.img`
+    width: 360px;
+
+    @media(min-width: 670px) {
+        width: 600px;
+    }
 `;
 
 export const H1 = styled.h1`
     color: ${props => props.color};
-    margin-bottom: 60px;
+    margin: 20px 0 50px 0;
 `;
 
 export const Input = styled.input`
