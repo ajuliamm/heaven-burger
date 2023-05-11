@@ -1,6 +1,7 @@
 import React from 'react';
 import { 
     Button, 
+    ImageBurger,
     DivFlex,
     Container } from './Style.js';
 import LogoBurger from '../img/LogoBurger.svg'
@@ -21,7 +22,7 @@ export default function HomeScreen() {
     return (
         <Container
         backgroundColor='#E99331'>
-            <img src={LogoBurger}/>
+            <ImageBurger src={LogoBurger}/>
             <DivFlex>
                 <Button onClick={changeToLogin}
                 backgroundColor='rgb(69,30,18,17%)'

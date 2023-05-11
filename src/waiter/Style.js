@@ -36,7 +36,7 @@ export const Main = styled.main`
 `;
 
 export const Image = styled.img`
-    width: 350px;
+    /* width: 350px; */
 
 `;
 

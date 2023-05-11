@@ -1,6 +1,6 @@
 import React, {useRef} from 'react';
 import { useNavigate } from 'react-router-dom'
-import LogoOrange from '../img/LogoOrange.svg';
+import LogoOrange from '../img/Orange2.png';
 import { postLogin } from '../API/Users.js';
 import { handleError } from '../Errors/Errors.js';
 import {
@@ -23,7 +23,6 @@ export default function Login() {
     const email = useRef();
     const password = useRef();
     const msgEmptyFild = useRef();
-    const msgEmailInvalid = useRef();
     const msgErrorLogin = useRef();
 
     // const [user , setUser] = useState("");
@@ -55,7 +54,7 @@ export default function Login() {
    return( 
     <Container 
     backgroundColor ='#451e12'>
-            <Image width={400} alt='Logo-heaven-bueguer' src={LogoOrange}/>
+            <Image alt='Logo-heaven-bueguer' src={LogoOrange}/>
             <H1 color='#E48B26'>
                 LOGIN
             </H1>
