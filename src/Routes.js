@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from './signIn/Login'
-import Register from './signIn/Register';
-import HomeScreen from './signIn/HomeScreen';
-import HomeWaiter from './waiter/HomeWaiter';
+import Login from './pages/signIn/Login'
+import Register from './pages/signIn/Register';
+import HomeScreen from './pages/signIn/HomeScreen';
+import HomeWaiter from './pages/waiter/HomeWaiter';
 
 export default function MyRoutes(){
     return (
@@ -13,7 +13,6 @@ export default function MyRoutes(){
                 <Route path='/Login' element={<Login/>}/>
                 <Route path='/Register' element={<Register/>}/>
                 <Route path='/HomeWaiter' element={<HomeWaiter/>}/>
-                
             </Routes>
         </Router>
     );
