@@ -4,7 +4,7 @@ export const postLogin = (typedEmail, typedPassword) => {
     return fetch(`${API_URL}/login`, {
     // Tipo da requisicao
     method: "POST",
-    //o headers indicar que estamos enviando dados no formato JSON
+    //o headers indicar que estamos enviando dados no formato JSON.
     //o content type serve para indicar o tipo de dado que estamos enviando.
     headers: {
         'Content-Type': 'application/json',
