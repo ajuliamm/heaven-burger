@@ -6,7 +6,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
     return (
     <Nav>         
         <Button role="botão" aria-label="Clique para adicionar pedido">
-            <i className="bi bi-plus-circle"></i>
+            <i className="bi bi-plus-circle">add pedidos</i>
         </Button>
         <Button role="botão" aria-label="Clique para ver pedidos em andamento">
             <i className="bi bi-stopwatch"></i>
