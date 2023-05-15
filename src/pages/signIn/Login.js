@@ -1,19 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-// import { useNavigate } from 'react-router-dom'
 import LogoOrange from '../../img/Orange2.png';
-// import { postLogin } from '../API/Users.js';
-// import { handleError } from '../Errors/Errors.js';
 import Form from '../../components/Form/Form';
 import ImageLogo from '../../components/ImageLogo/ImageLogo';
-
-// import {
-//     H1, 
-//     Form,
-//     Image,
-//     Input, 
-//     MessageError, 
-//     Container } from './Style.js';
 
 const Container = styled.div`
     display: flex;
