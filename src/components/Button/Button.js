@@ -1,14 +1,12 @@
 import React from "react";
 import { StyledButton } from "./Styles";
 
-
 const Button = (props) => {
     
-
-   console.log(props)
+   //console.log(props)
     return (
         <StyledButton className={props.id} onClick={props.onClick}>
-            {props.text}
+            {props.children}
         </StyledButton>
     )
 }

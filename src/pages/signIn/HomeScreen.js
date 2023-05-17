@@ -30,8 +30,8 @@ export default function HomeScreen() {
     return (
         <Container backgroundColor='#E99331'>
             <ImageLogo src={LogoBurger}/>
-            <Button onClick={changeToLogin} backgroundColor='rgb(69,30,18,17%)' color='#451E12' text='ENTRAR'/>   
-            <Button onClick={changeToRegister} text='CADASTRAR'/>
+            <Button onClick={changeToLogin} backgroundColor='rgb(69,30,18,17%)' color='#451E12'>ENTRAR</Button>   
+            <Button onClick={changeToRegister}>CADASTRAR</Button>
          </Container>
     )
 }

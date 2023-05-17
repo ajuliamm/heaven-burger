@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import ImageLogo from '../../components/ImageLogo/ImageLogo';
 import LogoBrown from '../../img/Brown2.png';
-import Form from '../../components/Form/Form';
+import FormRegister from '../../components/FormRegister/FormRegister';
 
 
 const Container = styled.div`
@@ -21,7 +21,7 @@ const Register = () => {
     return (
         <Container backgroundColor= '#E99331'>
             <ImageLogo src={LogoBrown}/>
-            <Form text='CADASTRO'  class='register' classSelect='active' textButton='CADASTRAR'/>
+            <FormRegister text='CADASTRO'  class='register' classSelect='active' textButton='CADASTRAR'/>
         </Container>
     )
 }
