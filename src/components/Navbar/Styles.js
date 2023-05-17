@@ -14,12 +14,9 @@ export const Button = styled.button`
     border:none;
 
     &:hover{
-        
         transition: font-size 0.2s linear;
         -webkit-transition:font-size 0.3s;
         font-size: 50px;
         color: beige;
-       
-        
     }
 `;
