@@ -1,5 +1,10 @@
 import styled from "styled-components";
-
+export const Header = styled.header`
+    background: #451E12;
+    padding: 0 40px;
+    width:100vw;
+    height: 100px;
+`;
 export const Nav = styled.nav`
     width: 100%;
     height:100%;

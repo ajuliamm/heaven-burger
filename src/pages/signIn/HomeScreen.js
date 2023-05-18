@@ -24,7 +24,6 @@ export default function HomeScreen() {
     }
     
     function changeToRegister(){
-        console.log('deu bom')
         navigate('/Register');
     }
     return (

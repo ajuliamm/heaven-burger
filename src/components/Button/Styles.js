@@ -24,4 +24,36 @@ export const StyledButton = styled.button`
         color: #E48B26;
         background-color: rgb(176,136,90,17%);
     }
+    &.btnMenu{
+        background-color: #2D0F05;
+        color: #E99331;
+        width: 170px;
+
+        &:hover{ 
+            background-color: #E48B26;
+            color: black;
+        }
+        &:active{
+            opacity: .5;
+        }
+    }
+    &.orderResume{
+        background-color: #E48B26;
+        height: 30px;
+        width: 250px;
+        border-radius: 6px;
+
+        &:hover{ 
+        opacity: .8;
+
+        &:active{
+        opacity: .5;
+        }
+    }
+
+    }
+
+    &.hidden{
+        display: none;
+    }
 `;
