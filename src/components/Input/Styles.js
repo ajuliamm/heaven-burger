@@ -16,7 +16,7 @@ export const StyledInput = styled.input`
         
         &::placeholder{
         color: #451E12;
-    }
+        }
     }
     &.register{
         background-color: rgb(69, 30, 18, 50%);
@@ -24,7 +24,14 @@ export const StyledInput = styled.input`
 
         &::placeholder{
         color: #FDC269; 
+        }
     }
+    &.client{
+        background-color: #C18050;
+        color: #451E12;
+        width: 300px;
+        &::placeholder{
+        color: #451E12;
+        }
     }
-   
 `;
