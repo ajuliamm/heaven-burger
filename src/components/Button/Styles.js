@@ -53,7 +53,9 @@ export const StyledButton = styled.button`
 
     }
 
-    &.hidden{
-        display: none;
+    &.trash{
+        width:auto;
+        background:transparent;
+        font-size:24px;
     }
 `;
