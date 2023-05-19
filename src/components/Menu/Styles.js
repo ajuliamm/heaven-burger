@@ -15,8 +15,11 @@ export const DivFlex = styled.div`
     flex-wrap: wrap;
     gap: 5px;
     padding: 15px;
+    width:380px;
 `;
 export const H1 = styled.h1`
     background-color: #7B451C;
     color:#E99331;
+    font-size:26px;
+
 `;
