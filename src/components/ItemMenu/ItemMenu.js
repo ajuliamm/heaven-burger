@@ -2,12 +2,12 @@ import React from "react";
 import { BtnItem, ValueItem } from "./Styles";
 
 
-const ItemMenu = () => {
+const ItemMenu = (props) => {
 
     return (
         <BtnItem>
-            <ValueItem>Hamburguer Simples</ValueItem>
-            <ValueItem>10,00</ValueItem>
+            <ValueItem onClick={props.onClick}>{props.name}</ValueItem>
+            <ValueItem>{props.price.toFixed(2)}</ValueItem>
             
         </BtnItem>
     )

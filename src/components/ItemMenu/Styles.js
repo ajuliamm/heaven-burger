@@ -3,10 +3,10 @@ import styled from "styled-components";
 export const BtnItem = styled.button`
     background-color: #DB9E71;
     display: flex;
-    gap: 10px;
+    padding: 0 10px;
     width: 300px;
     height: 35px;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     border-radius: 8px;
     border:none;
