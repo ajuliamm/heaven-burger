@@ -1,5 +1,8 @@
-const API_URL = 'http://localhost:8080';
-const AUTH_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBlbWFpbC5jb20iLCJpYXQiOjE2ODQ1MzM1MDAsImV4cCI6MTY4NDUzNzEwMCwic3ViIjoiNiJ9.S4L4puovkodDsdf1oyEoOeshktWdgdomzKid0tQvQ0s';
+import { token } from "../components/FormLogin/FormLogin";
+
+console.log(token)
+const API_URL = 'https://burger-queen-api-mock-nine.vercel.app';
+//const AUTH_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdyYWNlQGVtYWlsLmNvbSIsImlhdCI6MTY4NDc3NDc4MywiZXhwIjoxNjg0Nzc4MzgzLCJzdWIiOiI0In0.Xq9vWiKkjNJ7HHLO2qISDUWYjlRtqz-utAIA9C3uczg';
 
 export const getProducts = () => {
     return fetch(`${API_URL}/products`, {
@@ -7,7 +10,7 @@ export const getProducts = () => {
         method: "GET",
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${AUTH_TOKEN}`,
+            'Authorization': `Bearer ${token}`,
         },
 
     })

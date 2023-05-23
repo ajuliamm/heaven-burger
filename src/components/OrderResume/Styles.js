@@ -26,7 +26,8 @@ export const DivItem = styled.div`
     padding: 0 5px;
     width:330px;
     gap:15px;
-    border: 2px solid #fff;
+    margin:3px 0;
+    /* border: 2px solid #fff; */
     
 `;
 
@@ -35,6 +36,7 @@ export const ContainerItem = styled.div`
     border-top: 2px solid #683923;
     border-bottom:2px solid #683923;
     padding: 10px 0 ;
+   
 `;
 
 export const InfoItem = styled.li`
@@ -49,6 +51,8 @@ export const InfoItem = styled.li`
 export const DivQtd = styled.div`
     display: flex;
     gap: 8px;
+
+   
 `;
 
 export const BtnQtd = styled.button`
@@ -56,6 +60,9 @@ export const BtnQtd = styled.button`
     border: none;
     font-size:20px;
     background:transparent;
+    &:hover{
+        opacity: .8;
+    }
 `;
 
 export const H3 = styled.p`

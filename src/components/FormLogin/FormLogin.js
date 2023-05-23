@@ -6,6 +6,8 @@ import { StyledFormLogin, H1, MessageError } from "./Styles";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 
+export let token;
+
 const FormLogin = (props) => {
 
     const navigate = useNavigate()
@@ -19,6 +21,8 @@ const FormLogin = (props) => {
         e.preventDefault();
         navigate('/');
     } 
+
+  
 
     function btnLogar(e){
         e.preventDefault()
@@ -36,6 +40,9 @@ const FormLogin = (props) => {
                         msgErrorLogin.current.textContent = msgErro
                         return msgErrorLogin.current.classList.remove('hidden-p');
                     }else{
+                        const resp = await response.json()
+                        console.log(resp.accessToken)
+                        token = resp.accessToken
                         navigate('/HomeWaiter');
                     }
                 })
