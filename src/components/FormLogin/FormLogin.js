@@ -17,7 +17,6 @@ const FormLogin = (props) => {
     const msgErrorLogin = useRef();
 
     function changeToHomeScreen (e) {
-        console.log('deu bom')
         e.preventDefault();
         navigate('/');
     } 
@@ -34,14 +33,13 @@ const FormLogin = (props) => {
             msgEmptyFild.current.classList.add('hidden-p')
                 postLogin(email.current.value, password.current.value)
                 .then(async (response) => {  
-                    console.log(response);    
                     if(response.status === 400){
                         const msgErro = handleError(await response.json());
                         msgErrorLogin.current.textContent = msgErro
                         return msgErrorLogin.current.classList.remove('hidden-p');
                     }else{
                         const resp = await response.json()
-                        console.log(resp.accessToken)
+                       // console.log(resp.accessToken)
                         token = resp.accessToken
                         navigate('/HomeWaiter');
                     }

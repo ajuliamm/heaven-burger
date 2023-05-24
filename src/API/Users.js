@@ -1,4 +1,4 @@
-const API_URL = 'https://burger-queen-api-mock-nine.vercel.app';
+const API_URL = 'http://localhost:8080';
 
 export const postLogin = (typedEmail, typedPassword) => {
     return fetch(`${API_URL}/login`, {

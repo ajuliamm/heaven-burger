@@ -16,7 +16,6 @@ const Form=(props)=>{
     const team = useRef();
 
     function changeToHomeScreen (e) {
-        console.log('deu bom')
         e.preventDefault();
         navigate('/');
     } 
@@ -32,8 +31,6 @@ const Form=(props)=>{
             postRegister(email.current.value, password.current.value, team.current.value)
         }   
     }
-    console.log(props);
-    
     return (
 
         <StyledForm className={props.class}>

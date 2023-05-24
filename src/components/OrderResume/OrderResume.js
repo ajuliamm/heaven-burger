@@ -19,26 +19,14 @@ const OrderResume = () => {
                     <InfoItem>10,00</InfoItem>
                     <InfoItem>
                     <DivQtd>
-                        <BtnQtd><i class="bi bi-dash-square-fill"></i></BtnQtd>
+                        <BtnQtd><i className="bi bi-dash-square-fill"></i></BtnQtd>
                             <Quantity> 1 </Quantity>
-                        <BtnQtd><i class="bi bi-plus-square-fill"></i></BtnQtd>
+                        <BtnQtd><i className="bi bi-plus-square-fill"></i></BtnQtd>
                     </DivQtd>
                     </InfoItem>
-                    <Button id='trash'><i class="bi bi-trash3"></i></Button>
-
+                    <Button id='trash'><i className="bi bi-trash3"></i></Button>
                 </DivItem>
-                <DivItem>
-                    <InfoItem>Hamburguer Duplo</InfoItem>
-                    <InfoItem>20,00</InfoItem>
-                    <InfoItem>
-                    <DivQtd>
-                        <BtnQtd><i class="bi bi-dash-square-fill"></i></BtnQtd>
-                            <Quantity> 1 </Quantity>
-                        <BtnQtd><i class="bi bi-plus-square-fill"></i></BtnQtd>
-                    </DivQtd>
-                    </InfoItem>
-                    <Button id='trash'><i class="bi bi-trash3"></i></Button>
-                </DivItem>
+                
             </ContainerItem>
             <Total>Total:</Total>
             <Button id='orderResume'>ENVIAR PARA PREPARO</Button>
