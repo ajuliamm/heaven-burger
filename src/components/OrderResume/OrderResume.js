@@ -3,9 +3,17 @@ import { H1, Container, DivItem, ContainerItem, InfoItem, DivQtd, H3, BtnQtd, Qu
 import Input from '../Input/Input'
 import Button from '../Button/Button';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-
+import { useNavigate } from "react-router-dom";
 
 const OrderResume = () => {
+
+    const navigate = useNavigate();
+
+    function backToHomeScreen (e) {
+        e.preventDefault();
+        navigate('/HomeWaiter');
+    } 
+
     return (
         <Container backgroundColor='#451E12 '>
 
@@ -30,6 +38,7 @@ const OrderResume = () => {
             </ContainerItem>
             <Total>Total:</Total>
             <Button id='orderResume'>ENVIAR PARA PREPARO</Button>
+            <Button id='orderResume' onClick={backToHomeScreen}>VOLTAR</Button>
         </Container>
     )
 }

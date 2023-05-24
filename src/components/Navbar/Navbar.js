@@ -3,13 +3,15 @@ import {  Nav, Button, Header } from './Styles.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { useNavigate } from 'react-router-dom';
 
- const Navbar= () =>{
+ const Navbar = () => {
 
     const navigate = useNavigate();
 
     function changeToOrders(){
         navigate('/NewOrder');
     }
+    function changeToBackOrders(){
+        navigate('/BackOrders');
     function changeToFinishedOrders(){
         navigate('/FinishedOrders');
     }
@@ -22,9 +24,8 @@ import { useNavigate } from 'react-router-dom';
         <Nav>         
             <Button role='botão' aria-label='Clique para adicionar pedido' onClick={changeToOrders}>
                 <i className='bi bi-plus-circle'></i>
-                
             </Button>
-            <Button role='botão' aria-label='Clique para ver pedidos em andamento'>
+            <Button role='botão' aria-label='Clique para ver pedidos em andamento' onClick={changeToBackOrders}>
                 <i className='bi bi-stopwatch'></i>
             </Button>
             <Button role='botão' aria-label='Clique para ver pedidos finalizados' onClick={changeToFinishedOrders}>

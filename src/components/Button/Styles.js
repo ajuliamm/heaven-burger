@@ -37,6 +37,7 @@ export const StyledButton = styled.button`
             opacity: .5;
         }
     }
+    
     &.orderResume{
         background-color: #E48B26;
         height: 30px;
@@ -44,13 +45,11 @@ export const StyledButton = styled.button`
         border-radius: 6px;
 
         &:hover{ 
-        opacity: .8;
-
-        &:active{
-        opacity: .5;
+            opacity: .8;
         }
-    }
-
+        &:active{
+            opacity: .5;
+        }
     }
 
     &.trash{

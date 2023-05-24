@@ -9,13 +9,13 @@ import { Container, Main } from './Style.js';
 
 export default function HomeWaiter(){
     return (
-    <Container backgroundColor='#E99331'>
-        <Navbar/>                       
-        <Main>
-            <ImageLogo alt='logo-heaven-burger' src={LogoBurger}/>
-        </Main>
-               
-        <Footer/>
-    </Container>  
+        <Container backgroundColor='#E99331'>
+            <Navbar/>                       
+            <Main>
+                <ImageLogo alt='logo-heaven-burger' src={LogoBurger}/>
+            </Main>
+                
+            <Footer/>
+        </Container>  
     )
 }
