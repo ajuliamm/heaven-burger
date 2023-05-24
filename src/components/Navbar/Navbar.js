@@ -10,9 +10,13 @@ import { useNavigate } from 'react-router-dom';
     function changeToOrders(){
         navigate('/NewOrder');
     }
-    
     function changeToBackOrders(){
         navigate('/BackOrders');
+    function changeToFinishedOrders(){
+        navigate('/FinishedOrders');
+    }
+    function logout(){
+        navigate('/');
     }
 
     return (
@@ -24,10 +28,10 @@ import { useNavigate } from 'react-router-dom';
             <Button role='botão' aria-label='Clique para ver pedidos em andamento' onClick={changeToBackOrders}>
                 <i className='bi bi-stopwatch'></i>
             </Button>
-            <Button role='botão' aria-label='Clique para ver pedidos finalizados'>
+            <Button role='botão' aria-label='Clique para ver pedidos finalizados' onClick={changeToFinishedOrders}>
                 <i className='bi bi-check2-circle'></i>
             </Button>
-            <Button role='botão' aria-label='Clique para sair do app'>
+            <Button role='botão' aria-label='Clique para sair do app' onClick={logout}>
                 <i className='bi bi-box-arrow-left'></i>
             </Button>
         </Nav> 
