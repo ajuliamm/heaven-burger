@@ -8,7 +8,7 @@ import { StyledForm, H1, MessageError, Div, TextRegister } from './Styles';
 
 const Form=(props)=>{
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const email = useRef();
     const password = useRef();
     const msgEmptyFild = useRef();

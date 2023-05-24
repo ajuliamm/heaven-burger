@@ -5,6 +5,7 @@ import Register from './pages/signIn/Register';
 import HomeScreen from './pages/signIn/HomeScreen';
 import HomeWaiter from './pages/waiter/HomeWaiter';
 import NewOrder from './pages/waiter/NewOrder';
+import BackOrders from './pages/backOrders/BackOrders';
 
 export default function MyRoutes(){
     return (
@@ -15,6 +16,7 @@ export default function MyRoutes(){
                 <Route path='/Register' element={<Register/>}/>
                 <Route path='/HomeWaiter' element={<HomeWaiter/>}/>
                 <Route path='/NewOrder' element={<NewOrder/>}/>
+                <Route path='/BackOrders' element={<BackOrders/>}/>
             </Routes>
         </Router>
     );

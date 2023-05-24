@@ -12,6 +12,7 @@ const NewOrder = () => {
             <Menu/>
             <OrderResume/>
         </Container>
+        
     )
 }
 export default NewOrder; 

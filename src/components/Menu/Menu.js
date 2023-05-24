@@ -4,10 +4,8 @@ import Button from '../../components/Button/Button';
 import ItemMenu from "../../components/ItemMenu/ItemMenu";
 import { getProducts } from "../../API/Products";
 
-
 const Menu = () => {
    
-
     const [dataProducts, setDataProducts]=useState([]);
     const [typeProducts, setTypeProducts]=useState('');
     
