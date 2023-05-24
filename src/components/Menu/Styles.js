@@ -14,8 +14,8 @@ export const DivFlex = styled.div`
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 5px;
-    padding: 15px;
-    width:380px;
+    padding: 12px;
+    width:370px;
 `;
 export const H1 = styled.h1`
     background-color: #7B451C;

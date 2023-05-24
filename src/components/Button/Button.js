@@ -4,8 +4,6 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 
 const Button = (props) => {
-    
-   //console.log(props)
     return (
         <StyledButton className={props.id} onClick={props.onClick}>
             {props.children}

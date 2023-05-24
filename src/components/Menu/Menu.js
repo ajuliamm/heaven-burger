@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, DivFlex, H1, List } from "./Styles";
 import Button from '../../components/Button/Button';
 import ItemMenu from "../../components/ItemMenu/ItemMenu";
@@ -6,18 +6,27 @@ import { getProducts } from "../../API/Products";
 
 
 const Menu = () => {
+   
+
     const [dataProducts, setDataProducts]=useState([]);
+    const [typeProducts, setTypeProducts]=useState('');
     
-    const openMenu = async (optionMenu) => {
-        try {
-            const response = await getProducts();
-            const json = await response.json();
-            setDataProducts(json.filter(product=>product.type===optionMenu))
-            console.log(json);
-        } catch (error) {
-            //console.error(error);
-        }
-    };
+    useEffect(()=>{
+        const openMenu = async () => {
+            try {
+                const response = await getProducts();
+                const json = await response.json();
+              
+                setDataProducts(json.filter(product=>product.type===typeProducts))
+                
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        openMenu()
+    },[typeProducts]//lista todos os estados que devem fazer com que a ação dos estados seja refeita
+    )
+ 
 
     const addProduct = (id) => {
         console.log('produto adicionado :D', id)
@@ -27,10 +36,10 @@ const Menu = () => {
         <Container>
                <H1>NOVO PEDIDO</H1>
             <DivFlex>
-                <Button onClick={()=>openMenu('Desayuno')} id='btnMenu'>CAFÉ DA MANHÃ</Button>
-                <Button onClick={()=>openMenu('Almuerzo')} id='btnMenu'>APERITIVOS</Button>
-                <Button id='btnMenu'>HAMBURGUERS</Button>
-                <Button id='btnMenu'>BEBIDAS</Button>
+                <Button onClick={()=>setTypeProducts('breakfast')} id='btnMenu'>CAFÉ DA MANHÃ</Button>
+                <Button onClick={()=>setTypeProducts('appetizers')} id='btnMenu'>APERITIVOS</Button>
+                <Button onClick={()=>setTypeProducts('hamburgers')} id='btnMenu'>HAMBURGUERS</Button>
+                <Button onClick={()=>setTypeProducts('drinks')} id='btnMenu'>BEBIDAS</Button>
             </DivFlex>
             <List>
                 {dataProducts.map(product=>(
