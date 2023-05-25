@@ -5,7 +5,7 @@ import Register from './pages/signIn/Register';
 import HomeScreen from './pages/signIn/HomeScreen';
 import HomeWaiter from './pages/waiter/HomeWaiter';
 import NewOrder from './pages/waiter/NewOrder';
-import BackOrders from './pages/backOrders/BackOrders';
+import BackOrders from './pages/BackOrders/BackOrders';
 import FinishedOrders from './pages/FinishedOrders/FinishedOrders';
 
 export default function MyRoutes(){

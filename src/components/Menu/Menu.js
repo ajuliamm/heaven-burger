@@ -4,7 +4,7 @@ import Button from '../../components/Button/Button';
 import ItemMenu from "../../components/ItemMenu/ItemMenu";
 import { getProducts } from "../../API/Products";
 
-const Menu = () => {
+const Menu = ({setListOrder,listOrder}) => {
    
     const [dataProducts, setDataProducts]=useState([]);
     const [typeProducts, setTypeProducts]=useState('');
@@ -26,8 +26,8 @@ const Menu = () => {
     )
  
 
-    const addProduct = (id) => {
-        console.log('produto adicionado :D', id)
+    const addProduct = (product) => {
+        setListOrder([...listOrder,product])
     }
 
     return (
@@ -41,7 +41,7 @@ const Menu = () => {
             </DivFlex>
             <List>
                 {dataProducts.map(product=>(
-                    <ItemMenu onClick={()=>addProduct(product.id)} name={product.name} price={product.price} key={product.id}/>
+                    <ItemMenu onClick={()=>addProduct(product)} name={product.name} price={product.price} key={product.id}/>
                     //console.log(product, product.name, product.price, product.id)
                 ))
                 }

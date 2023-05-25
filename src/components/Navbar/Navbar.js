@@ -12,6 +12,7 @@ import { useNavigate } from 'react-router-dom';
     }
     function changeToBackOrders(){
         navigate('/BackOrders');
+    }
     function changeToFinishedOrders(){
         navigate('/FinishedOrders');
     }
