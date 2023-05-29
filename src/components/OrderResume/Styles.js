@@ -14,6 +14,14 @@ export const Container = styled.div`
     min-height: 55vh;;
     gap: 15px; 
     padding:10px 5px;
+    @media(min-width: 746px) {
+        width: 50vw;
+        min-height: 100vh;
+    }
+    @media(min-width: 850px) {
+        width: calc(50vw - 50px);
+        min-height: 100vh;
+    }
 `;
 
 export const DivItem = styled.div`

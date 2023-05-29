@@ -2,13 +2,14 @@ import React from "react";
 import { Container } from "./Styles";
 import Navbar from "../../components/Navbar/Navbar";
 
-export default function BackOrders(){
+const BackOrders = () => {
 
     return (
         <Container>
-            <Navbar>
-
-            </Navbar>
+            <Navbar/>
+            <h1>PEDIDOS EM ESPERA</h1>
         </Container>
     )
 }
+
+export default BackOrders;
