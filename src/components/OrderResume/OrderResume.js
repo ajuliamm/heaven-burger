@@ -5,10 +5,10 @@ import Button from '../Button/Button';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { useNavigate } from "react-router-dom";
 
-const OrderResume = ({ listOrder, resume }) => {
+const OrderResume = ({ setListOrder, listOrder, setResume, resume }) => {
 
-    // console.log(resume)
-    // console.log(listOrder) 
+    console.log(resume)
+    console.log(listOrder) 
 
     const [sumPrice, setSumPrice] = useState(0);
     const navigate = useNavigate();
@@ -16,18 +16,33 @@ const OrderResume = ({ listOrder, resume }) => {
     useEffect(() => {
         let totalPrice = 0;
       
-        resume.forEach(product => {
-          totalPrice += parseFloat(product.product.price);
+        listOrder.forEach(product => {
+          totalPrice += parseFloat(product.price); //converte string p decimal
         });
       
         setSumPrice(totalPrice.toFixed(2));
-      }, [resume]);
-      
-      console.log(sumPrice);
+      }, [listOrder]);
 
     function backToHomeScreen(e) {
         e.preventDefault();
         navigate('/HomeWaiter');
+    }
+    function deleteItem(product){
+        //console.log(product)
+        
+        console.log('botão clicado');
+        let updateResume = [...resume];
+        const foundIndex = resume.findIndex((element) => element === product);
+        updateResume.splice(foundIndex, 1);
+
+        let updatedListOrder = [...listOrder];
+        const filtro = updatedListOrder.filter(element => element !== product.product)
+        console.log(filtro);
+        
+        setResume(updateResume);
+        //console.log(listOrder);
+        setListOrder(filtro);
+        //console.log(listOrder);
     }
     
     return (
@@ -45,11 +60,11 @@ const OrderResume = ({ listOrder, resume }) => {
                         <InfoItem>
                             <DivQtd>
                                 <BtnQtd><i className="bi bi-dash-square-fill"></i></BtnQtd>
-                                <Quantity> {product.qty}</Quantity>
+                                <Quantity> {product.qty} </Quantity>
                                 <BtnQtd><i className="bi bi-plus-square-fill"></i></BtnQtd>
                             </DivQtd>
                         </InfoItem>
-                        <Button id='trash'><i className="bi bi-trash3"></i></Button>
+                        <Button onClick={() => deleteItem(product)} id='trash'><i className="bi bi-trash3"></i></Button>
                     </DivItem>
                 ))}
             </ContainerItem>
