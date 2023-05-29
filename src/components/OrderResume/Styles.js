@@ -11,9 +11,8 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100vw;
-    min-height: auto;
-    gap: 15px;
-    height: 55vh;
+    min-height: 55vh;;
+    gap: 15px; 
     padding:10px 5px;
 `;
 
@@ -46,6 +45,16 @@ export const InfoItem = styled.li`
     color: #451E12;
     display:flex;
     text-align: center;
+    justify-content:center;
+
+    &.styleName{
+        width:200px;
+        text-align: center;
+    }
+
+    &.stylePrice{
+        width:50px;
+    }
 `;
 
 export const DivQtd = styled.div`
