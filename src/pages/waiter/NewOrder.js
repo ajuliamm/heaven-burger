@@ -5,12 +5,13 @@ import OrderResume from '../../components/OrderResume/OrderResume';
 import Navbar from "../../components/Navbar/Navbar";
 
 const NewOrder = () => {
-    const [listOrder, setListOrder] = useState([]) 
+    const [listOrder, setListOrder] = useState([]);
+    const [resume, setResume] = useState([]);
     return (
         <Container backgroundColor='#7B451C'>
             <Navbar/>
-            <Menu setListOrder={setListOrder} listOrder={listOrder}/>
-            <OrderResume listOrder={listOrder}/>
+            <Menu setListOrder={setListOrder} listOrder={listOrder} setResume={setResume} resume ={resume}/>
+            <OrderResume listOrder={listOrder} resume={resume}/>
         </Container>
         
     )

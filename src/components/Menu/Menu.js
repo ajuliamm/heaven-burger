@@ -4,7 +4,7 @@ import Button from '../../components/Button/Button';
 import ItemMenu from "../../components/ItemMenu/ItemMenu";
 import { getProducts } from "../../API/Products";
 
-const Menu = ({setListOrder,listOrder}) => {
+const Menu = ({setListOrder,listOrder, setResume, resume}) => {
    
     const [dataProducts, setDataProducts]=useState([]);
     const [typeProducts, setTypeProducts]=useState('');
@@ -25,9 +25,15 @@ const Menu = ({setListOrder,listOrder}) => {
     },[typeProducts]//lista todos os estados que devem fazer com que a ação dos estados seja refeita
     )
  
-
+    let qtdProduct = 1;
     const addProduct = (product) => {
-        setListOrder([...listOrder,product])
+        if(listOrder.includes(product)){
+            qtdProduct++;
+            console.log(qtdProduct)
+        } else {
+            setResume([...resume,{qty:1,product}])
+            setListOrder([...listOrder,product]);
+        }
     }
 
     return (
@@ -46,7 +52,6 @@ const Menu = ({setListOrder,listOrder}) => {
                 ))
                 }
             </List>
-            
         </Container>
     )
 }

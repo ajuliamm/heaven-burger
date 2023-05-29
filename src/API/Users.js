@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8080';
+const API_URL = "https://heaven-burger-api-mock.vercel.app";
 
 export const postLogin = (typedEmail, typedPassword) => {
     return fetch(`${API_URL}/login`, {
@@ -7,7 +7,7 @@ export const postLogin = (typedEmail, typedPassword) => {
         //o headers indicar que estamos enviando dados no formato JSON.
         //o content type serve para indicar o tipo de dado que estamos enviando.
         headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
         },
         // Dados a serem enviados na requisicao
         body: JSON.stringify({

@@ -8,7 +8,6 @@ const ItemMenu = (props) => {
         <BtnItem onClick={props.onClick}>
             <ValueItem >{props.name}</ValueItem>
             <ValueItem>{props.price.toFixed(2)}</ValueItem>
-            
         </BtnItem>
     )
 }
