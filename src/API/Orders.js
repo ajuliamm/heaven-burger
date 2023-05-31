@@ -1,6 +1,7 @@
-import { token } from "../components/FormLogin/FormLogin";
+import { getItens } from "../utils/token";
 
 const API_URL = "https://heaven-burger-api-mock.vercel.app";
+const AUTH_TOKEN = getItens();
 
 export const postOrders = (userId, client, arrProducts, dateOrder) => {
 
@@ -8,7 +9,7 @@ export const postOrders = (userId, client, arrProducts, dateOrder) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${AUTH_TOKEN}`,
     },
     body: JSON.stringify({
       userId: userId,

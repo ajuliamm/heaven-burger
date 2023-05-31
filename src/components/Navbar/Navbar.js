@@ -1,6 +1,8 @@
 import React from 'react';
 import {  Nav, Button, Header } from './Styles.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import ImageLogo from '../ImageLogo/ImageLogo.js'
+import LogoBege from '../../img/logoBege.png'
 import { useNavigate } from 'react-router-dom';
 
  const Navbar = () => {
@@ -22,6 +24,7 @@ import { useNavigate } from 'react-router-dom';
 
     return (
     <Header>
+        <ImageLogo logoDesktop='logoDesktop' src={LogoBege} />
         <Nav>         
             <Button role='botão' aria-label='Clique para adicionar pedido' onClick={changeToOrders}>
                 <i className='bi bi-plus-circle'></i>

@@ -17,6 +17,7 @@ export const Container = styled.div`
     @media(min-width: 746px) {
         width: 50vw;
         min-height: 100vh;
+        padding:70px 0 10px 0;
     }
     @media(min-width: 850px) {
         width: calc(50vw - 50px);

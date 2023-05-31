@@ -17,10 +17,10 @@ export const Container = styled.div`
 export const Main = styled.main`
     display:flex;
     flex-direction:column;
+    height:calc(100vh - 150px);
+    
 
     @media(min-width: 746px) {
-        flex-direction: row;
+        height:100vh;
     }
 `;
-
-
