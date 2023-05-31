@@ -1,12 +1,12 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { handleError } from "../../Errors/Errors";
 import { postLogin } from "../../API/Users";
 import { StyledFormLogin, H1, MessageError } from "./Styles";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
-
-export let token;
+import { setItens } from '../../utils/token';
+//import { OrderContext } from "../../contexts/OrderContext";
 
 const FormLogin = (props) => {
 
@@ -15,22 +15,21 @@ const FormLogin = (props) => {
     const password = useRef();
     const msgEmptyFild = useRef();
     const msgErrorLogin = useRef();
+    //const {setToken} = useContext();
 
     function changeToHomeScreen (e) {
         e.preventDefault();
         navigate('/');
     } 
 
-  
-
     function btnLogar(e){
         e.preventDefault()
      
         if(email.current.value === '' || password.current.value === ''){
-            msgEmptyFild.current.classList.remove('hidden-p')
+            msgEmptyFild.current.classList.remove('hidden-p');
             msgErrorLogin.current.classList.add('hidden-p');
         } else {
-            msgEmptyFild.current.classList.add('hidden-p')
+            msgEmptyFild.current.classList.add('hidden-p');
                 postLogin(email.current.value, password.current.value)
                 .then(async (response) => {  
                     if(response.status === 400){
@@ -39,8 +38,9 @@ const FormLogin = (props) => {
                         return msgErrorLogin.current.classList.remove('hidden-p');
                     }else{
                         const resp = await response.json()
-                       // console.log(resp.accessToken)
-                        token = resp.accessToken
+
+                        console.log(resp)
+                        setItens(resp.accessToken);
                         navigate('/HomeWaiter');
                     }
                 })

@@ -3,7 +3,7 @@ import { StyledImage } from "./Styles";
 
 const ImageLogo = (props) => {
     return(
-        <StyledImage alt='Logo heaven bueguer' src={props.src} />
+        <StyledImage className={props.logoDesktop} alt='Logo heaven bueguer' src={props.src} />
     )
 }
 

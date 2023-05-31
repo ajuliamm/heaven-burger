@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Container, Main } from "./Style";
-import Menu from '../../components/Menu/Menu';
-import OrderResume from '../../components/OrderResume/OrderResume';
-import Navbar from "../../components/Navbar/Navbar";
+import Menu from '../../../components/Menu/Menu';
+import OrderResume from '../../../components/OrderResume/OrderResume';
+import Navbar from "../../../components/Navbar/Navbar";
 
 const NewOrder = () => {
     const [listOrder, setListOrder] = useState([]);

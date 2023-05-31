@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "./Styles";
+import { Container, Main } from "./Styles";
 import Navbar from "../../components/Navbar/Navbar";
 
 const BackOrders = () => {
@@ -7,7 +7,9 @@ const BackOrders = () => {
     return (
         <Container>
             <Navbar/>
-            <h1>PEDIDOS EM ESPERA</h1>
+            <Main>
+                <h1>PEDIDOS EM ESPERA</h1>
+            </Main>
         </Container>
     )
 }
