@@ -1,8 +1,8 @@
 
-// import React, { createContext, useState } from 'react';
+// import { createContext, useState } from 'react';
 
-// export const OrderContext = createContext();
-// export const OrderProvider = ({children}) => {
+// const UserContext = createContext();
+// export const UserProvider = ({children}) => {
 //     const [token, setToken] = useState('');
 //     const sharedValues = {token, setToken}
 //     return (
@@ -11,3 +11,5 @@
 //         </OrderContext.Provider>
 //     )
 // }
+
+// export default UserContext;

@@ -29,12 +29,13 @@ const OrderResume = ({ setListOrder, listOrder, setResume, resume }) => {
   useEffect(() => {
     let totalPrice = 0;
 
-    listOrder.forEach((product) => {
-      totalPrice += parseFloat(product.price); //converte string p decimal
+    resume.forEach((product) => {
+  
+      totalPrice += parseFloat(product.product.price*product.qty); //converte string p decimal
     });
 
     setSumPrice(totalPrice.toFixed(2));
-  }, [listOrder]);
+  }, [resume]);
 
   function backToHomeScreen(e) {
     e.preventDefault();
@@ -46,21 +47,38 @@ const OrderResume = ({ setListOrder, listOrder, setResume, resume }) => {
     const foundIndex = resume.findIndex((element) => element === product);
     updateResume.splice(foundIndex, 1);
 
-    let updatedListOrder = [...listOrder];
-    const filtro = updatedListOrder.filter(
-      (element) => element !== product.product
-    );
-    
     setResume(updateResume);
-    setListOrder(filtro);
-    
+
   }
 
-  
+  function changeQtdItem(option, product) {
+
+    const foundIndex = resume.findIndex((element) => element === product)
+
+    if (foundIndex !== -1) {
+
+      const updatedResume = [...resume];
+      let qtdProduct = updatedResume[foundIndex].qty; //atualiza a var
+
+      if (option === 'increase') {
+        qtdProduct++;
+      } else {
+        if(qtdProduct > 1){
+          qtdProduct--
+        } else{
+          return deleteItem(product)
+        }
+        //qtdProduct > 1 ? qtdProduct-- : deleteItem(product);        
+      }
+      //option === 'increase' ? qtdProduct++ : qtdProduct-- ;
+      updatedResume[foundIndex].qty = qtdProduct; //atualiza o estado do resume
+      setResume(updatedResume);
+    }
+  }
+
   function sendOrder() {
     const currentDateTime = new Date().toLocaleString();
     const client = clientName.current.value;
-
     //postOrders(userId, client, resume, currentDateTime);
   }
 
@@ -79,11 +97,11 @@ const OrderResume = ({ setListOrder, listOrder, setResume, resume }) => {
             </InfoItem>
             <InfoItem>
               <DivQtd>
-                <BtnQtd>
+                <BtnQtd onClick={() => changeQtdItem('decrease', product)}>
                   <i className="bi bi-dash-square-fill"></i>
                 </BtnQtd>
                 <Quantity> {product.qty} </Quantity>
-                <BtnQtd>
+                <BtnQtd onClick={() => changeQtdItem('increase', product)}>
                   <i className="bi bi-plus-square-fill"></i>
                 </BtnQtd>
               </DivQtd>
@@ -104,4 +122,5 @@ const OrderResume = ({ setListOrder, listOrder, setResume, resume }) => {
     </Container>
   );
 };
+
 export default OrderResume;
