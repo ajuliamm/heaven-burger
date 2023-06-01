@@ -3,27 +3,34 @@ import { Container, DivFlex, H1, List } from "./Styles";
 import Button from "../../components/Button/Button";
 import ItemMenu from "../../components/ItemMenu/ItemMenu";
 import { getProducts } from "../../API/Products";
+import { useParams } from "react-router-dom";
 //import { OrderContext } from "../../contexts/OrderContext";
 
 const Menu = ({ setListOrder, listOrder, setResume, resume }) => {
+  const [allProducts, setAllProducts] = useState([])
   const [dataProducts, setDataProducts] = useState([]);
   const [typeProducts, setTypeProducts] = useState("");
   //const {token} = useContext(OrderContext);
   //console.log(token)
-  
+  console.log(allProducts)
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await getProducts();
+        const json = await response.json();
+        setAllProducts(json);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchData()
+  }, []);
+
+
   useEffect(
     () => {
-      const openMenu = async () => {
-        try {
-          const response = await getProducts();
-          const json = await response.json();
-
-          setDataProducts(
-            json.filter((product) => product.type === typeProducts)
-          );
-        } catch (error) {
-          console.error(error);
-        }
+      const openMenu =  () => {
+        setDataProducts(allProducts.filter((product) => product.type === typeProducts));
       };
       openMenu();
     },
@@ -35,16 +42,16 @@ const Menu = ({ setListOrder, listOrder, setResume, resume }) => {
       const foundIndex = resume.findIndex((element) => element.product === product); //acha o index que tem repetido
 
       if (foundIndex !== -1) {
-        // Atualize o valor de qty se o produto já existir no array resume
+        //atualiza o valor de qty se o produto já existir no array resume
         const updatedResume = [...resume];
-        let qtdProduct = updatedResume[foundIndex].qty; // atualiza a var
+        let qtdProduct = updatedResume[foundIndex].qty; //atualiza a var
         qtdProduct++;
 
         updatedResume[foundIndex].qty = qtdProduct; //atualiza o estado do resume
         setResume(updatedResume);
 
       } else {
-        // Adicione um novo objeto ao array resume se o produto não existir
+        //adiciona um novo objeto ao array resume se o produto não existir
         setResume([...resume, { qty: 1, product }]);
       }
 

@@ -7,7 +7,7 @@ const Select = forwardRef((props, ref) => {
         //ref={team}
         <StyledSelect  color='#E8B25A' ref={ref}>                         
             <option hidden>...</option>
-            <option value='waiter'>Atendente</option>
+            <option value='atend'>Atendente</option>
             <option value='chef'>Chefe de Cozinha</option>
             <option value='admin'>Administrador</option>
         </StyledSelect>
