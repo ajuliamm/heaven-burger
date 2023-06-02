@@ -7,11 +7,11 @@ import HomeWaiter from './pages/waiter/HomeWaiter/HomeWaiter';
 import NewOrder from './pages/waiter/NewOrder/NewOrder';
 import BackOrders from './pages/BackOrders/BackOrders';
 import FinishedOrders from './pages/FinishedOrders/FinishedOrders';
-// import { OrderProvider } from './contexts/OrderContext';
+import { UserProvider } from './contexts/UserContext';
 
 export default function MyRoutes(){
     return (
-        // <OrderProvider>
+        <UserProvider>
             <Router>
                 <Routes>
                     <Route path='/' element={<HomeScreen/>}/> 
@@ -23,6 +23,6 @@ export default function MyRoutes(){
                     <Route path='/FinishedOrders' element={<FinishedOrders/>}/>
                 </Routes>
             </Router>
-        // </OrderProvider>
+        </UserProvider>
     );
 }

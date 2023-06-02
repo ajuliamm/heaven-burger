@@ -12,7 +12,6 @@ const Menu = ({ setListOrder, listOrder, setResume, resume }) => {
   const [typeProducts, setTypeProducts] = useState("");
   //const {token} = useContext(OrderContext);
   //console.log(token)
-  console.log(allProducts)
   useEffect(() => {
     async function fetchData() {
       try {

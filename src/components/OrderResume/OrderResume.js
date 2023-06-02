@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useContext } from "react";
 import {
   H1,
   Container,
@@ -16,11 +16,12 @@ import Button from "../Button/Button";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { useNavigate } from "react-router-dom";
 import { postOrders } from "../../API/Orders";
+import UserContext from "../../contexts/UserContext";
+import { getOrders } from "../../API/Orders";
 
 const OrderResume = ({ setListOrder, listOrder, setResume, resume }) => {
 
-  console.log(resume);
-  console.log(listOrder);
+  const {user} = useContext(UserContext);
 
   const [sumPrice, setSumPrice] = useState(0);
   const navigate = useNavigate();
@@ -40,6 +41,7 @@ const OrderResume = ({ setListOrder, listOrder, setResume, resume }) => {
   function backToHomeScreen(e) {
     e.preventDefault();
     navigate("/HomeWaiter");
+    getOrders()
   }
 
   function deleteItem(product) {
@@ -53,7 +55,7 @@ const OrderResume = ({ setListOrder, listOrder, setResume, resume }) => {
 
   function changeQtdItem(option, product) {
 
-    const foundIndex = resume.findIndex((element) => element === product)
+    const foundIndex = resume.findIndex((element) => element === product);
 
     if (foundIndex !== -1) {
 
@@ -64,22 +66,31 @@ const OrderResume = ({ setListOrder, listOrder, setResume, resume }) => {
         qtdProduct++;
       } else {
         if(qtdProduct > 1){
-          qtdProduct--
+          qtdProduct--;
         } else{
-          return deleteItem(product)
-        }
-        //qtdProduct > 1 ? qtdProduct-- : deleteItem(product);        
+          return deleteItem(product);
+        }     
       }
-      //option === 'increase' ? qtdProduct++ : qtdProduct-- ;
       updatedResume[foundIndex].qty = qtdProduct; //atualiza o estado do resume
       setResume(updatedResume);
     }
   }
-
+  console.log(resume)
   function sendOrder() {
     const currentDateTime = new Date().toLocaleString();
     const client = clientName.current.value;
-    //postOrders(userId, client, resume, currentDateTime);
+    const userId = user.id
+    if(client === "" || resume.length < 1){
+      client === "" ? alert('Digite o nome do cliente.') : alert('Não há produtos selecionados.')
+      
+    }
+    else{
+      postOrders(userId, client, resume, currentDateTime)
+      .then(()=>{
+        setResume([])
+      })
+
+    }
   }
 
   return (

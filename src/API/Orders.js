@@ -15,20 +15,32 @@ export const postOrders = (userId, client, arrProducts, dateOrder) => {
       userId: userId,
       client: client,
       products: arrProducts,
-        // {
-        //   qty: 5,
-        //   product: {
-        //     id: 1214,
-        //     name: "Sandwich de jamón y queso",
-        //     price: 1000,
-        //     image:
-        //       "https://github.com/Laboratoria/bootcamp/tree/main/projects/04-burger-queen-api/resources/images/sandwich.jpg",
-        //     type: "Desayuno",
-        //     dateEntry: "2022-03-05 15:14:10",
-        //   },
-        // },
       status: "pending",
       dateEntry: dateOrder,
     }),
-  });
+  })
+    .then(response => response.json()) // Converter a resposta em json
+    .then(json => console.log(json))
+    .catch(error => {
+      console.log(error)
+      throw error
+    });
 };
+export const getOrders = () => {
+
+  return fetch(`${API_URL}/orders`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${AUTH_TOKEN}`,
+    }
+  })
+    .then(response => response.json()) // Converter a resposta em json
+    .then(json => console.log(json))
+    .catch(error => {
+      console.log(error)
+      throw error
+    });
+};
+
+

@@ -6,9 +6,11 @@ import { StyledFormLogin, H1, MessageError } from "./Styles";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 import { setItens } from '../../utils/token';
-//import { OrderContext } from "../../contexts/OrderContext";
-
+import UserContext from "../../contexts/UserContext";
 const FormLogin = (props) => {
+
+    const {addToUser} = useContext(UserContext)
+
 
     const navigate = useNavigate()
     const email = useRef();
@@ -41,7 +43,9 @@ const FormLogin = (props) => {
 
                         console.log(resp)
                         setItens(resp.accessToken);
+                        addToUser(resp.user)
                         navigate('/HomeWaiter');
+                     
                     }
                 })
                 .catch(error => console.log(error));
