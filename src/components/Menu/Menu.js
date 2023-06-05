@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { Container, DivFlex, H1, List } from "./Styles";
-import Button from "../../components/Button/Button";
-import ItemMenu from "../../components/ItemMenu/ItemMenu";
-import { getProducts } from "../../API/Products";
-import { useParams } from "react-router-dom";
-//import { OrderContext } from "../../contexts/OrderContext";
+import React, { useState, useEffect } from 'react';
+import { Container, DivFlex, H1, List } from './Styles';
+import Button from '../../components/Button/Button';
+import ItemMenu from '../../components/ItemMenu/ItemMenu';
+import { getProducts } from '../../API/Products';
+import { useParams } from 'react-router-dom';
+//import { OrderContext } from '../../contexts/OrderContext';
 
 const Menu = ({ setListOrder, listOrder, setResume, resume }) => {
   const [allProducts, setAllProducts] = useState([])
   const [dataProducts, setDataProducts] = useState([]);
-  const [typeProducts, setTypeProducts] = useState("");
+  const [typeProducts, setTypeProducts] = useState('');
   //const {token} = useContext(OrderContext);
   //console.log(token)
   useEffect(() => {
@@ -24,7 +24,6 @@ const Menu = ({ setListOrder, listOrder, setResume, resume }) => {
     }
     fetchData()
   }, []);
-
 
   useEffect(
     () => {
@@ -64,16 +63,16 @@ const Menu = ({ setListOrder, listOrder, setResume, resume }) => {
     <Container>
       <H1>NOVO PEDIDO</H1>
       <DivFlex>
-        <Button onClick={() => setTypeProducts("breakfast")} id="btnMenu">
+        <Button onClick={() => setTypeProducts('breakfast')} id='btnMenu'>
           CAFÉ DA MANHÃ
         </Button>
-        <Button onClick={() => setTypeProducts("appetizers")} id="btnMenu">
+        <Button onClick={() => setTypeProducts('appetizers')} id='btnMenu'>
           APERITIVOS
         </Button>
-        <Button onClick={() => setTypeProducts("hamburgers")} id="btnMenu">
+        <Button onClick={() => setTypeProducts('hamburgers')} id='btnMenu'>
           HAMBURGUERS
         </Button>
-        <Button onClick={() => setTypeProducts("drinks")} id="btnMenu">
+        <Button onClick={() => setTypeProducts('drinks')} id='btnMenu'>
           BEBIDAS
         </Button>
       </DivFlex>
