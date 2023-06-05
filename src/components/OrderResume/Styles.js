@@ -98,3 +98,7 @@ export const Total = styled.p`
     font-size: 20px;
     color:#E99331;
 `;
+
+export const ImgIcon = styled.img`
+    width: 50px;
+`;

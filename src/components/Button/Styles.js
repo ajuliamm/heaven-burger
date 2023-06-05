@@ -57,4 +57,16 @@ export const StyledButton = styled.button`
         background:transparent;
         font-size:24px;
     }
+
+    &.buttonModal{
+        background-color: #B87028;
+        width: 100px;
+        height:35px;
+        &:hover{ 
+            opacity: .8;
+        }
+        &:active{
+            opacity: .5;
+        }
+    }
 `;
