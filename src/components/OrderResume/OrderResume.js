@@ -23,13 +23,15 @@ import {
 } from './Styles';
 
 //codigo necessário para os recursos de acessibilidade
-Modal.setAppElement('#root');
+//Modal.setAppElement('#root');
 
 const OrderResume = ({ setResume, resume }) => {
 
   const [modalIsOpen, setIsOpen] = useState(false);
   const [sumPrice, setSumPrice] = useState(0);
-  const {user} = useContext(UserContext);
+  //const {user} = useContext(UserContext);
+  const { user } = useContext(UserContext) || {}; // Verifica se UserContext é undefined
+
   const navigate = useNavigate();
   const clientName = useRef();
 
@@ -54,7 +56,7 @@ const OrderResume = ({ setResume, resume }) => {
   function backToHomeScreen(e) {
     e.preventDefault();
     navigate('/HomeWaiter');
-    getOrders()
+    getOrders();
   }
 
   function deleteItem(product) {
@@ -70,7 +72,6 @@ const OrderResume = ({ setResume, resume }) => {
     const foundIndex = resume.findIndex((element) => element === product);
 
     if (foundIndex !== -1) {
-
       const updatedResume = [...resume];
       let qtdProduct = updatedResume[foundIndex].qty; //atualiza a var
 
