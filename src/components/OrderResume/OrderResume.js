@@ -27,7 +27,7 @@ Modal.setAppElement('#root');
 
 const OrderResume = ({ setResume, resume }) => {
 
-  const [modalIsOpen, setIslOpen] = useState(false);
+  const [modalIsOpen, setIsOpen] = useState(false);
   const [sumPrice, setSumPrice] = useState(0);
   const {user} = useContext(UserContext);
   const navigate = useNavigate();
@@ -44,11 +44,11 @@ const OrderResume = ({ setResume, resume }) => {
   }, [resume]);
 
   function openModal(){
-    setIslOpen(true);
+    setIsOpen(true);
   } 
 
   function closeModal(){
-    setIslOpen(false);  
+    setIsOpen(false);  
   } 
 
   function backToHomeScreen(e) {
