@@ -3,8 +3,8 @@ import React from 'react';
 import FormLogin from '../components/FormLogin/FormLogin';
 import userEvent from '@testing-library/user-event';
 import { render, screen } from '@testing-library/react';
+import UserContext from '../../contexts/UserContext';
 import { useNavigate } from 'react-router-dom';
-
 
 const mockNavigate = jest.fn();
 
@@ -13,6 +13,13 @@ jest.mock('react-router-dom', ()=>({
   useNavigate: () => mockNavigate
 }));
 
+// Mock do contexto UserContext
+jest.mock('../../contexts/UserContext', () => ({
+  __esModule: true,
+  default: {
+    addToUser: jest.fn()
+  }
+}));
 describe('FormLogin', () => {
     
     it('should render the components correctly', ()=>{
@@ -45,3 +52,5 @@ describe('FormLogin', () => {
       expect(btnLogarMock).toHaveBeenCalled();
     });
 });
+
+

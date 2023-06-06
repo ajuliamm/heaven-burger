@@ -7,11 +7,10 @@ import Input from "../Input/Input";
 import Button from "../Button/Button";
 import { setItens } from '../../utils/token';
 import UserContext from "../../contexts/UserContext";
+
 const FormLogin = (props) => {
 
     const {addToUser} = useContext(UserContext)
-
-
     const navigate = useNavigate()
     const email = useRef();
     const password = useRef();
