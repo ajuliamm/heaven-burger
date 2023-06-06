@@ -4,6 +4,10 @@ export const StyledFooter = styled.footer`
     flex-direction: column;
     align-items: center;
     height: 50px;
+
+    @media(min-width:850px){
+        display:none;
+    }
 `;
 export const Paragrafo = styled.p`
     
