@@ -13,6 +13,14 @@ export const StyledImage = styled.img`
         }
     }
 
+    &.HomeDesktop{
+        
+        width:800px;
+        position: absolute;
+        bottom:0;
+        left:calc(50% - 300px);
+    }
+
     @media(min-width: 670px) {
         width: 400px;
     }
