@@ -13,6 +13,7 @@ export default function HomeWaiter(){
         <Container backgroundColor='#E99331'>
             <Navbar/>                       
             <Main>
+                <ImageLogo alt='logo-heaven-burger' logoDesktop='HomeMobile' src={LogoBurger}/>    
                 <ImageLogo alt='logo-heaven-burger' logoDesktop='HomeDesktop' src={HandBurger}/>
             </Main>
                 

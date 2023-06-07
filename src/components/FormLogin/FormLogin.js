@@ -51,7 +51,7 @@ const FormLogin = (props) => {
         }   
     }
 
-    return(
+    return (
         <StyledFormLogin>
             <H1 color='#E48B26' className={props.class}> {props.text} </H1>
             <Input class={props.class} ref={email} placeholder='Email' type='email'/>
