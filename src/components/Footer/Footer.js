@@ -4,10 +4,10 @@ const Footer = () => {
     return (
         <StyledFooter>
             <Paragrafo>
-                Desenvolvido por:
+                Ana Leticia B. Prince e Angelina Melo
             </Paragrafo>
             <Paragrafo>
-                Ana Leticia B. Prince e Angelina Melo
+                Turma 9 - Laboratoria, 2023.
             </Paragrafo>
         </StyledFooter>
     )

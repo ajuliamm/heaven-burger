@@ -26,6 +26,7 @@ export const postOrders = (userId, client, arrProducts, dateOrder) => {
       throw error
     });
 };
+
 export const getOrders = () => {
 
   return fetch(`${API_URL}/orders`, {
@@ -35,12 +36,7 @@ export const getOrders = () => {
       Authorization: `Bearer ${AUTH_TOKEN}`,
     }
   })
-    .then(response => response.json()) // Converter a resposta em json
-    .then(json => console.log(json))
-    .catch(error => {
-      console.log(error)
-      throw error
-    });
+    
 };
 
 
