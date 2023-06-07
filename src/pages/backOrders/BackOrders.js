@@ -28,7 +28,12 @@ const BackOrders = () => {
             <Navbar/>
             <Main>
                 <h1>PEDIDOS EM ESPERA</h1>
-                <CardOrder/>
+                
+                  {allOrders.map((order)=>(
+                    <CardOrder order={order} />
+                  ))}
+                
+                
             </Main>
         </Container>
     )
