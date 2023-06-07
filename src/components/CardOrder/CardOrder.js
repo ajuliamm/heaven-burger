@@ -1,15 +1,19 @@
 import React from "react";
 import { ContainerCard, InfosOrder, ItemOrder, OrderList, Status } from "./Styles";
 
-const CardOrder = () => {
+const CardOrder = ({order}) => {
+    console.log(order)
 
     return (
         <ContainerCard>
-            <InfosOrder>CLIENTE: ANA </InfosOrder>
-            <InfosOrder>ENTRADA: 07/06/2023, 09:52. </InfosOrder>
+            <InfosOrder>CLIENTE: {order.client} </InfosOrder>
+            <InfosOrder>ENTRADA: {order.dataEntry} </InfosOrder>
             <OrderList>
-                <ItemOrder> 1 - HAMBURGUER VEGANO S/ MOLHO </ItemOrder>
-                <ItemOrder> 1 - SUCO DE MORANGO S/ GELO </ItemOrder>
+                {order.products.map((product)=>(
+                    <ItemOrder> {product.qty} - {product.product.name} </ItemOrder>
+                ))}
+                
+                
             </OrderList>
             <InfosOrder>TOTAL: 52,50 </InfosOrder>
             <Status>

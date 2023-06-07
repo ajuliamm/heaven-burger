@@ -27,4 +27,6 @@ export const Main = styled.main`
         color: #E99331;
         padding: 10px;
     }
+
 `;
+

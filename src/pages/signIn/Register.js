@@ -1,6 +1,5 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { useNavigate } from 'react-router-dom';
 import ImageLogo from '../../components/ImageLogo/ImageLogo';
 import LogoBrown from '../../img/Brown2.png';
 import FormRegister from '../../components/FormRegister/FormRegister';

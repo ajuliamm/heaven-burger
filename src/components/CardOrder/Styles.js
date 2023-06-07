@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 export const ContainerCard = styled.div`
-    padding-top:10px;
+    padding-top:15px;
     background-color:#D49566;
     width:300px;
     height:200px;
     display: flex;
     flex-direction:column;
     justify-content: space-between;
-    border-radius: 20px;
+    border-radius: 15px;
 `;
 
 export const InfosOrder = styled.p`
@@ -27,16 +27,18 @@ export const ItemOrder = styled.li`
 `;
 
 export const OrderList = styled.ol`
-
+    display: flex;
+    flex-direction:column ;
+    
 `;
 
 export const Status = styled.div`
     width:100%;
-    height:50px;
+    height:40px;
     background-color:#D37A15;
     display: flex;
     justify-content: center;
     align-items:center;
-    border-radius: 0px 0px 20px 20px;
+    border-radius: 0px 0px 15px 15px;
 `;
 

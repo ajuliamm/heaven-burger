@@ -3,8 +3,8 @@ import { Container, DivFlex, H1, List } from './Styles';
 import Button from '../../components/Button/Button';
 import ItemMenu from '../../components/ItemMenu/ItemMenu';
 import { getProducts } from '../../API/Products';
-import { useParams } from 'react-router-dom';
-//import { OrderContext } from '../../contexts/OrderContext';
+
+
 
 const Menu = ({ setListOrder, listOrder, setResume, resume }) => {
   const [allProducts, setAllProducts] = useState([])
