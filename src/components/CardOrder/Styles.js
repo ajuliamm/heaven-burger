@@ -3,12 +3,15 @@ import styled from "styled-components";
 export const ContainerCard = styled.div`
     padding-top:15px;
     background-color:#D49566;
-    width:300px;
-    height:200px;
+    min-width:300px;
+    min-height:200px;
     display: flex;
     flex-direction:column;
     justify-content: space-between;
     border-radius: 15px;
+    @media(min-width: 950px) {
+        width:35vw;
+    }
 `;
 
 export const InfosOrder = styled.p`

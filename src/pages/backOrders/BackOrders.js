@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Container, Main, DivCards } from "./Styles";
+import { Container, Main, SectionCards, SectionImg, Image, H1 } from "./Styles";
 import Navbar from "../../components/Navbar/Navbar";
 import CardOrder from "../../components/CardOrder/CardOrder";
 import { getOrders } from "../../API/Orders";
+import HandBurger from "../../img/burgerHandTwo.png";
 
 const BackOrders = () => {
     
@@ -27,12 +28,16 @@ const BackOrders = () => {
         <Container>
             <Navbar/>
             <Main>
-                <h1>PEDIDOS EM ESPERA</h1>
-                <DivCards>
+                 <SectionCards>
+                  <H1>PEDIDOS EM ESPERA</H1>
                     {allOrders.map((order)=>(
                       <CardOrder order={order} />
                     ))}
-                </DivCards>
+                </SectionCards>
+                <SectionImg>
+                  <Image src={HandBurger} />
+                </SectionImg>
+                
                   
                 
                 
