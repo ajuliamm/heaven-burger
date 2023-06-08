@@ -17,7 +17,13 @@ const Menu = ({ setListOrder, listOrder, setResume, resume }) => {
       try {
         const response = await getProducts();
         const json = await response.json();
-        setAllProducts(json);
+        console.log(json)
+        if (Array.isArray(json)) {
+          setAllProducts(json);
+        } else {
+          console.log('Não é um array')
+        }
+        
       } catch (error) {
         console.error(error);
       }
@@ -28,7 +34,9 @@ const Menu = ({ setListOrder, listOrder, setResume, resume }) => {
   useEffect(
     () => {
       const openMenu =  () => {
-        setDataProducts(allProducts.filter((product) => product.type === typeProducts));
+        const filterProducts = allProducts.filter((product) => product.type === typeProducts)
+        console.log(typeof filterProducts)
+        setDataProducts(filterProducts);
       };
       openMenu();
     },

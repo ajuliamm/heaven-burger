@@ -15,7 +15,6 @@ const CardOrder = ({order}) => {
                 
                 
             </OrderList>
-            <InfosOrder>TOTAL: 52,50 </InfosOrder>
             <Status>
             <InfosOrder>AGUARDANDO </InfosOrder>
             </Status>
