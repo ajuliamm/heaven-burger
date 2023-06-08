@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Main } from "./Styles";
+import { Container, Main, DivCards } from "./Styles";
 import Navbar from "../../components/Navbar/Navbar";
 import CardOrder from "../../components/CardOrder/CardOrder";
 import { getOrders } from "../../API/Orders";
@@ -28,10 +28,12 @@ const BackOrders = () => {
             <Navbar/>
             <Main>
                 <h1>PEDIDOS EM ESPERA</h1>
-                
-                  {allOrders.map((order)=>(
-                    <CardOrder order={order} />
-                  ))}
+                <DivCards>
+                    {allOrders.map((order)=>(
+                      <CardOrder order={order} />
+                    ))}
+                </DivCards>
+                  
                 
                 
             </Main>
