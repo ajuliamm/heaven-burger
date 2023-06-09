@@ -3,6 +3,7 @@ import { ContainerCard, InfosOrder, ItemOrder, OrderList, Status } from "./Style
 
 const CardOrder = ({order}) => {
     console.log(order)
+    console.log(order.dateEntry)
 
     return (
         <ContainerCard>

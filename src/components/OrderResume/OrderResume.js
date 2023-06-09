@@ -7,7 +7,8 @@ import { postOrders } from '../../API/Orders';
 import { getOrders } from '../../API/Orders';
 import Button from '../Button/Button';
 import Input from '../Input/Input';
-import Modal from 'react-modal';
+import ModalEx from '../Modal/Modal';
+
 import {
   H1,
   Container,
@@ -32,6 +33,17 @@ const OrderResume = ({ setResume, resume }) => {
   //const {user} = useContext(UserContext);
   const { user } = useContext(UserContext) || {}; // Verifica se UserContext é undefined
 
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
+
   const navigate = useNavigate();
   const clientName = useRef();
 
@@ -45,13 +57,7 @@ const OrderResume = ({ setResume, resume }) => {
     setSumPrice(totalPrice.toFixed(2));
   }, [resume]);
 
-  function openModal(){
-    setIsOpen(true);
-  } 
-
-  function closeModal(){
-    setIsOpen(false);  
-  } 
+ 
 
   function backToHomeScreen(e) {
     e.preventDefault();
@@ -140,37 +146,7 @@ const OrderResume = ({ setResume, resume }) => {
       <Button onClick={sendOrder} id='orderResume'>
         ENVIAR PARA PREPARO
       </Button>
-      <Modal isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel='Modal enviar pedido'
-      style={{
-        overlay: {
-          
-          position:'absolute',
-          top:'calc(50vh - 150px)',
-          left:'calc(50vw - 190px)',
-          backgroundColor: '#E48B26',
-          width: '380px',
-          height: '300px',
-          borderRadius: '10px',
-          
-        },
-        content: {
-          fontSize: '10px',
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: 'column',
-          gap:'30px',
-          border: '1px solid',
-          background: 'rgb(69,30,18,80%)',
-          borderRadius: '15px',
-          color:'#E99331'
-          
-        }
-      }}>
-        <ImgIcon src={checkIcon}/>
-        <h2>Pedido enviado para a cozinha!</h2>
-        <Button id='buttonModal' onClick={closeModal}>OK</Button>
-      </Modal>
+      <ModalEx textH2='Pedido enviado para a cozinha!' src={checkIcon} showModal={showModal} setShowModal={setShowModal}/>
       <Button id='orderResume' onClick={backToHomeScreen}>
         VOLTAR
       </Button>

@@ -16,7 +16,7 @@ export const postOrders = (userId, client, arrProducts, dateOrder) => {
       client: client,
       products: arrProducts,
       status: "pending",
-      dateEntry: dateOrder,
+      dataEntry: dateOrder,
     }),
   })
     .then(response => response.json()) // Converter a resposta em json
