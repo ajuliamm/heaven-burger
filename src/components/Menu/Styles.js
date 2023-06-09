@@ -40,3 +40,6 @@ export const List = styled.ul`
     gap: 5px;
 
 `;
+export const ImgIcon = styled.img`
+    width: 50px;
+`;
