@@ -15,7 +15,7 @@ export const Container = styled.div`
 `;
 
 export const H1 = styled.h1`
-    margin-bottom: 40px;
+    margin: 40px 0;
 
 `;
 
@@ -82,3 +82,6 @@ export const Image = styled.img`
     width:420px;
 
 `; 
+export const ImgIcon = styled.img`
+    width: 50px;
+`;

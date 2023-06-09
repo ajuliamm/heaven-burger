@@ -1,15 +1,19 @@
+import Modal from 'react-modal';
 import React, { useState, useEffect } from 'react';
-import { Container, DivFlex, H1, List } from './Styles';
+import { Container, DivFlex, H1, List, ImgIcon } from './Styles';
 import Button from '../../components/Button/Button';
 import ItemMenu from '../../components/ItemMenu/ItemMenu';
 import { getProducts } from '../../API/Products';
-
+import IconClose from '../../img/IconClose.svg';
 
 
 const Menu = ({ setListOrder, listOrder, setResume, resume }) => {
   const [allProducts, setAllProducts] = useState([])
   const [dataProducts, setDataProducts] = useState([]);
   const [typeProducts, setTypeProducts] = useState('');
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [error, setError] = useState('');
+
   //const {token} = useContext(OrderContext);
   //console.log(token)
   useEffect(() => {
@@ -17,11 +21,13 @@ const Menu = ({ setListOrder, listOrder, setResume, resume }) => {
       try {
         const response = await getProducts();
         const json = await response.json();
-        console.log(json)
+        
         if (Array.isArray(json)) {
           setAllProducts(json);
         } else {
-          console.log('Não é um array')
+          console.log(json)
+          setError('Ops! Tivemos um problema, atualize a página e tente novamente.')        
+          openModal()
         }
         
       } catch (error) {
@@ -67,6 +73,14 @@ const Menu = ({ setListOrder, listOrder, setResume, resume }) => {
     }
   };
 
+  function openModal(){
+    setIsOpen(true);
+  } 
+
+  function closeModal(){
+    setIsOpen(false);  
+  } 
+
   return (
     <Container>
       <H1>NOVO PEDIDO</H1>
@@ -95,6 +109,38 @@ const Menu = ({ setListOrder, listOrder, setResume, resume }) => {
           //console.log(product, product.name, product.price, product.id)
         ))}
       </List>
+      
+      <Modal isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel='Modal enviar pedido'
+      style={{
+        overlay: {
+          
+          position:'absolute',
+          top:'calc(50vh - 150px)',
+          left:'calc(50vw - 190px)',
+          backgroundColor: '#E48B26',
+          width: '380px',
+          height: '300px',
+          borderRadius: '10px',
+          
+        },
+        content: {
+          fontSize: '10px',
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: 'column',
+          gap:'30px',
+          border: '1px solid',
+          background: 'rgb(69,30,18,80%)',
+          borderRadius: '15px',
+          color:'#E99331'
+          
+        }
+      }}>
+        <ImgIcon src={IconClose}/>
+        <h2>{error}</h2>
+        <Button id='buttonModal' onClick={closeModal}>OK</Button>
+      </Modal>
     </Container>
   );
 };

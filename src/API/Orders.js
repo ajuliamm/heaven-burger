@@ -28,12 +28,12 @@ export const postOrders = (userId, client, arrProducts, dateOrder) => {
 };
 
 export const getOrders = () => {
-
+  console.log(AUTH_TOKEN)
   return fetch(`${API_URL}/orders`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${AUTH_TOKEN}`,
+      "Authorization": `Bearer ${AUTH_TOKEN}`,
     }
   })
     
