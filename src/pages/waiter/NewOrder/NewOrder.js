@@ -8,7 +8,7 @@ const NewOrder = () => {
     const [listOrder, setListOrder] = useState([]);
     const [resume, setResume] = useState([]);
     return (
-        <Container backgroundColor='#7B451C'>
+        <Container backgroundColor='#451E12'>
             <Navbar/>
             <Main>
                 <Menu setListOrder={setListOrder} listOrder={listOrder} setResume={setResume} resume ={resume}/>

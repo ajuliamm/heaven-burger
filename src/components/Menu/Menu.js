@@ -1,10 +1,10 @@
-import Modal from 'react-modal';
 import React, { useState, useEffect } from 'react';
 import { Container, DivFlex, H1, List, ImgIcon } from './Styles';
 import Button from '../../components/Button/Button';
 import ItemMenu from '../../components/ItemMenu/ItemMenu';
 import { getProducts } from '../../API/Products';
 import IconClose from '../../img/IconClose.svg';
+import ModalEx from '../Modal/Modal';
 
 
 const Menu = ({ setListOrder, listOrder, setResume, resume }) => {
@@ -13,6 +13,15 @@ const Menu = ({ setListOrder, listOrder, setResume, resume }) => {
   const [typeProducts, setTypeProducts] = useState('');
   const [modalIsOpen, setIsOpen] = useState(false);
   const [error, setError] = useState('');
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
 
   //const {token} = useContext(OrderContext);
   //console.log(token)
@@ -73,13 +82,7 @@ const Menu = ({ setListOrder, listOrder, setResume, resume }) => {
     }
   };
 
-  function openModal(){
-    setIsOpen(true);
-  } 
-
-  function closeModal(){
-    setIsOpen(false);  
-  } 
+ 
 
   return (
     <Container>
@@ -109,38 +112,8 @@ const Menu = ({ setListOrder, listOrder, setResume, resume }) => {
           //console.log(product, product.name, product.price, product.id)
         ))}
       </List>
-      
-      <Modal isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel='Modal enviar pedido'
-      style={{
-        overlay: {
-          
-          position:'absolute',
-          top:'calc(50vh - 150px)',
-          left:'calc(50vw - 190px)',
-          backgroundColor: '#E48B26',
-          width: '380px',
-          height: '300px',
-          borderRadius: '10px',
-          
-        },
-        content: {
-          fontSize: '10px',
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: 'column',
-          gap:'30px',
-          border: '1px solid',
-          background: 'rgb(69,30,18,80%)',
-          borderRadius: '15px',
-          color:'#E99331'
-          
-        }
-      }}>
-        <ImgIcon src={IconClose}/>
-        <h2>{error}</h2>
-        <Button id='buttonModal' onClick={closeModal}>OK</Button>
-      </Modal>
+      <ModalEx textH2={error} src={IconClose} showModal={showModal} setShowModal={setShowModal}/>
+
     </Container>
   );
 };

@@ -69,4 +69,8 @@ export const StyledButton = styled.button`
             opacity: .5;
         }
     }
+
+    &.buttonLogoNavBar{
+        background-color: white;;
+    }
 `;
