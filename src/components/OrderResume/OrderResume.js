@@ -62,7 +62,6 @@ const OrderResume = ({ setResume, resume }) => {
   function backToHomeScreen(e) {
     e.preventDefault();
     navigate('/HomeWaiter');
-    getOrders();
   }
 
   function deleteItem(product) {

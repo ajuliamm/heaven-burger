@@ -9,6 +9,10 @@ import { useNavigate } from 'react-router-dom';
 
     const navigate = useNavigate();
 
+    function backToHomeScreen(e) {
+        e.preventDefault();
+        navigate('/HomeWaiter');
+    }
     function changeToOrders(){
         navigate('/NewOrder');
     }
@@ -24,7 +28,9 @@ import { useNavigate } from 'react-router-dom';
 
     return (
     <Header>
-        <ImageLogo logoDesktop='logoDesktop' src={LogoBege} />
+        <Button onClick={backToHomeScreen}>
+            <ImageLogo logoDesktop='logoDesktop' src={LogoBege} />
+        </Button>
         <Nav>         
             <Button role='botão' aria-label='Clique para adicionar pedido' onClick={changeToOrders}>
                 <i className='bi bi-plus-circle'></i>
