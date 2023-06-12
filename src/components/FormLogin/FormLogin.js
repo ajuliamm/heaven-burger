@@ -16,7 +16,6 @@ const FormLogin = (props) => {
     const password = useRef();
     const msgEmptyFild = useRef();
     const msgErrorLogin = useRef();
-    //const {setToken} = useContext();
 
     function changeToHomeScreen (e) {
         e.preventDefault();
@@ -40,11 +39,15 @@ const FormLogin = (props) => {
                     }else{
                         const resp = await response.json()
 
-                        console.log(resp)
+                        console.log(resp);
                         setItens(resp.accessToken);
-                        addToUser(resp.user)
-                        navigate('/HomeWaiter');
-                     
+                        addToUser(resp.user);
+                        if(resp.user.role === 'atend'){
+                            navigate('/HomeWaiter');
+                        }
+                        else if(resp.user.role === 'chef'){
+                            navigate('/HomeChef');
+                        }
                     }
                 })
                 .catch(error => console.log(error));

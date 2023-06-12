@@ -28,8 +28,10 @@ const ModalEx = ({src, textH2, showModal, setShowModal}) => {
             left: "calc(50vw - 190px)",
             backgroundColor: "#E48B26",
             width: "380px",
-            height: "300px",
+            height: "350px",
             borderRadius: "10px",
+       
+
           },
           content: {
             fontSize: "10px",
@@ -37,11 +39,12 @@ const ModalEx = ({src, textH2, showModal, setShowModal}) => {
             justifyContent: "center",
             alignItems: "center",
             flexDirection: "column",
-            gap: "25px",
+            gap: "30px",
             border: "1px solid",
             background: "rgb(69,30,18,80%)",
             borderRadius: "15px",
             color: "#E99331",
+   
           },
         }}
       >

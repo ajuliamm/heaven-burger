@@ -8,10 +8,10 @@ import { Container, Main } from './Style.js';
 import HandBurger from '../../../img/handBurger.svg';
 
 
-export default function HomeWaiter(){
+const HomeWaiter = () => {
     return (
         <Container backgroundColor='#E99331'>
-            <Navbar/>                       
+            <Navbar role='waiter'/>                       
             <Main>
                 <ImageLogo alt='logo-heaven-burger' logoDesktop='HomeMobile' src={LogoBurger}/>    
                 <ImageLogo alt='logo-heaven-burger' logoDesktop='HomeDesktop' src={HandBurger}/>
@@ -21,3 +21,5 @@ export default function HomeWaiter(){
         </Container>  
     )
 }
+
+export default HomeWaiter;

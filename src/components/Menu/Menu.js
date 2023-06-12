@@ -23,8 +23,6 @@ const Menu = ({ setListOrder, listOrder, setResume, resume }) => {
     setShowModal(false);
   };
 
-  //const {token} = useContext(OrderContext);
-  //console.log(token)
   useEffect(() => {
     async function fetchData() {
       try {
