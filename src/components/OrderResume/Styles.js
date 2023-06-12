@@ -42,6 +42,10 @@ export const DivItem = styled.div`
 `;
 
 export const ContainerItem = styled.div`
+  display: flex;
+  align-items: center;
+  
+  flex-direction:column;
   border-top: 2px solid #683923;
   border-bottom: 2px solid #683923;
   padding: 10px 0;
@@ -115,6 +119,6 @@ export const Total = styled.p`
   color: #e99331;
 `;
 
-export const ImgIcon = styled.img`
-  width: 50px;
+export const SadBurgerIcon = styled.img`
+  width: 250px;
 `;

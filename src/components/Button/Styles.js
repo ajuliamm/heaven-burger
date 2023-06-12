@@ -8,6 +8,7 @@ export const StyledButton = styled.button`
     font-weight: 800;
     color: #3E180C;
     background-color: rgb(69,30,18,30%);
+    cursor: pointer;
 
     &:hover{ 
         background-color: #E48B26;
@@ -23,11 +24,13 @@ export const StyledButton = styled.button`
     &.login{
         color: #E48B26;
         background-color: rgb(176,136,90,17%);
+        cursor: pointer;
     }
     &.btnMenu{
         background-color: #2D0F05;
         color: #E99331;
         width: 170px;
+        cursor: pointer;
 
         &:hover{ 
             background-color: #E48B26;

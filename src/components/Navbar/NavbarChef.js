@@ -1,29 +1,18 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import {  Nav, Button, Header } from './Styles.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import ImageLogo from '../ImageLogo/ImageLogo.js'
 import LogoBege from '../../img/logoBege.png'
 import { useNavigate } from 'react-router-dom';
-import UserContext from "../../contexts/UserContext";
 
- const Navbar = (props) => {
+
+ const Navbar = () => {
 
     const navigate = useNavigate();
 
-    const { user } = useContext(UserContext) 
-
     function backToHomeScreen(e) {
         e.preventDefault();
-        if(user.role === 'atend'){
-            navigate('/HomeWaiter');
-        }
-        else if(user.role === 'chef'){
-            navigate('/HomeChef');
-        }
-        
-    }
-    function changeToOrders(){
-        navigate('/NewOrder');
+        navigate('/HomeChef');
     }
     function changeToBackOrders(){
         navigate('/BackOrders');
@@ -41,9 +30,6 @@ import UserContext from "../../contexts/UserContext";
             <ImageLogo logoDesktop='logoDesktop' src={LogoBege} />
         </Button>
         <Nav>         
-            <Button className={props.role}  role='botão' aria-label='Clique para adicionar pedido' onClick={changeToOrders}>
-                <i className='bi bi-plus-circle'></i>
-            </Button>
             <Button role='botão' aria-label='Clique para ver pedidos em andamento' onClick={changeToBackOrders}>
                 <i className='bi bi-stopwatch'></i>
             </Button>
