@@ -4,7 +4,6 @@ export const ContainerCard = styled.div`
     padding-top:15px;
     background-color:#D49566;
     min-width:300px;
-    min-height:200px;
     display: flex;
     flex-direction:column;
     justify-content: space-between;
@@ -27,11 +26,14 @@ export const ItemOrder = styled.li`
     padding-left:10px;
     list-style:none;
     font-size: 14px;
+    
 `;
 
 export const OrderList = styled.ol`
     display: flex;
     flex-direction:column ;
+    gap:3px;
+    margin: 10px 0;
     
 `;
 
