@@ -37,7 +37,7 @@ const ModalEx = ({src, textH2, showModal, setShowModal}) => {
             justifyContent: "center",
             alignItems: "center",
             flexDirection: "column",
-            gap: "30px",
+            gap: "25px",
             border: "1px solid",
             background: "rgb(69,30,18,80%)",
             borderRadius: "15px",
