@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Container, Main, SectionCards, SectionImg, Image, H1, ImgIcon } from "./Styles";
 import Navbar from "../../components/Navbar/Navbar";
 import CardOrder from "../../components/CardOrder/CardOrder";
@@ -7,12 +7,13 @@ import IconClose from '../../img/IconClose.svg'
 import { getOrders } from "../../API/Orders";
 import HandBurger from "../../img/burgerHandTwo.png";
 import ModalEx from "../../components/Modal/Modal"
+import UserContext from "../../contexts/UserContext";
 
 const BackOrders = () => {
+  const { user } = useContext(UserContext)
 
   const [allOrders, setAllOrders] = useState([]);
   const [error, setError] = useState('');
-  const [modalIsOpen, setIsOpen] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
   const openModal = () => {
@@ -50,7 +51,7 @@ const BackOrders = () => {
 
   return (
     <Container>
-      <Navbar />
+      <Navbar role={user.role}/>
       <Main>
         <SectionCards>
           <H1>PEDIDOS EM ESPERA</H1>
