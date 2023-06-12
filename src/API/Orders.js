@@ -28,7 +28,7 @@ export const postOrders = (userId, client, arrProducts, dateOrder) => {
 };
 
 export const getOrders = () => {
-  console.log(AUTH_TOKEN)
+  //console.log(AUTH_TOKEN)
   return fetch(`${API_URL}/orders`, {
     method: "GET",
     headers: {
@@ -37,6 +37,24 @@ export const getOrders = () => {
     }
   })
     
+};
+
+export const updateStatusOrder = (orderId, newStatus) => {
+  const newDate = new Date().toLocaleString();
+  return fetch(`${API_URL}/orders/${orderId}`,{
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${AUTH_TOKEN}`,
+      //é auth token ou getitems?
+    },
+    body: JSON.stringify({
+      status: newStatus,
+      dataExit: newDate,
+      //colocar p atualiza a nova data?
+    }),
+    
+  })
 };
 
 

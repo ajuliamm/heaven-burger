@@ -4,11 +4,11 @@ import checkIcon from "../../img/icon_check.png";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { useNavigate } from "react-router-dom";
 import { postOrders } from "../../API/Orders";
-import { getOrders } from "../../API/Orders";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
 import ModalEx from "../Modal/Modal";
 import SadBurger from "../../img/SadBurger.png";
+
 import {
   H1,
   Container,
@@ -85,7 +85,6 @@ const OrderResume = ({ setResume, resume }) => {
       setResume(updatedResume);
     }
   }
-  console.log(resume);
 
   function sendOrder() {
     const currentDateTime = new Date().toLocaleString();

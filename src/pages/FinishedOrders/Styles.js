@@ -27,3 +27,44 @@ export const Main = styled.main`
 
     }
 `;
+
+export const SadBurgerIcon = styled.img`
+    width: 200px;
+    
+`;
+
+export const H3 = styled.h3`
+    margin: 40px 0;
+
+`;
+
+export const SectionCards = styled.section`
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    overflow-y: scroll;
+    height:calc(100vh - 100px);
+    width:100vw;
+
+    @media(min-width: 870px) {
+        
+        width: calc(100% - 420px);
+        height:100vh;
+        
+        
+    }
+
+    /*Estilização da barra de rollagem*/
+    &::-webkit-scrollbar-track {
+    background-color: #603516;
+    }
+    &::-webkit-scrollbar {
+    width: 10px;
+    background: #603516;
+    }
+    &::-webkit-scrollbar-thumb {
+    background: #451E12;
+    }
+    
+`;
