@@ -18,6 +18,10 @@ export const H1 = styled.h1`
     margin: 40px 0;
 
 `;
+export const H3 = styled.h3`
+    margin: 40px 0;
+
+`;
 
 export const Main = styled.main`
     display:flex;
@@ -82,6 +86,7 @@ export const Image = styled.img`
     width:420px;
 
 `; 
-export const ImgIcon = styled.img`
-    width: 50px;
+export const SadBurgerIcon = styled.img`
+    width: 200px;
+    
 `;
