@@ -8,13 +8,12 @@ import {
   OrderList,
   Status,
   ButtonIcon,
+  ButtonCheck,
 } from "./Styles";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 const CardOrder = ({ order }) => {
   const { user } = useContext(UserContext);
-  const [elapsedTime, setElapsedTime] = useState("");
-
   const finishedOrder = (orderId) => {
     console.log(orderId);
 
@@ -26,17 +25,22 @@ const CardOrder = ({ order }) => {
         throw error;
       });
   };
-
+  const convertDateFormat = (dateString) => {
+    const [date, time] = dateString.split(', ');
+    const [day, month, year] = date.split('/')
+    const isoDate = `${year}-${month}-${day}T${time}`;
+  
+    return isoDate;
+  };
   const calcTime = (entryTime, exitTime) => {
-
-    const calculateTime = new Date(exitTime) - new Date(entryTime);
-    console.log(calculateTime, typeof calculateTime);
+    const isoEntryTime = convertDateFormat(entryTime);
+    const isoExitTime = convertDateFormat(exitTime);
+    const calculateTime = new Date(isoExitTime) - new Date(isoEntryTime);
     const horas = Math.floor(calculateTime / (1000 * 60 * 60));
     const minutos = Math.floor((calculateTime % (1000 * 60 * 60)) / (1000 * 60));
     const segundos = Math.floor((calculateTime % (1000 * 60)) / 1000);
+    const theElapsedTime = `${horas}h ${minutos}m ${segundos}s`;
 
-    const theElapsedTime = `${horas}:${minutos}:${segundos}`;
-    console.log(theElapsedTime)
     return theElapsedTime;
   };
 
@@ -48,7 +52,6 @@ const CardOrder = ({ order }) => {
           ? `ENTRADA: ${order.dataEntry}`
           : `TEMPO DE PREPARO: ${calcTime(order.dataEntry, order.dataExit)}`}
       </InfosOrder>
-
       <OrderList>
         {order.products.map((product) => (
           <ItemOrder>
@@ -66,8 +69,16 @@ const CardOrder = ({ order }) => {
         className={`${user.role} ${order.status}`}
         onClick={() => finishedOrder(order.id)}
       >
+        
         <i className="bi bi-check2-circle"></i>
       </ButtonIcon>
+      <ButtonCheck
+        className={`${user.role} ${order.status}`}
+        // onClick={() => finishedOrder(order.id)}
+      >
+        <i className="bi bi-check-circle"></i>
+        <InfosOrder className="infoCheck">ENTREGAR PEDIDO?</InfosOrder>
+      </ButtonCheck>
     </ContainerCard>
   );
 };

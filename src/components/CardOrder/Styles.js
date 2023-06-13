@@ -23,6 +23,11 @@ export const InfosOrder = styled.p`
   &.client {
     margin-top: 10px;
   }
+  &.infoCheck{
+    color: #DB9E71;
+    font-size: 11.5px;
+    padding-left: 0px;
+  }
 `;
 
 export const ItemOrder = styled.li`
@@ -82,5 +87,34 @@ export const ButtonIcon = styled.button`
   }
   &.finished{
     display:none;
+  }
+`;
+
+export const ButtonCheck = styled.button`
+  color: #e48b26;
+  font-size: 30px;
+  cursor: pointer;
+  background-color: #451E12;
+  width: 80px;
+  height: 100%;
+  align-self: flex-end;
+  position: absolute;
+  border-radius: 0 15px 15px 0;
+  border: none;
+  display: none;
+
+
+  &.atend {
+    display: block;
+  }
+  &.pending{
+    display: none;
+  }
+  &.finished {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
   }
 `;

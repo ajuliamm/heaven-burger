@@ -1,13 +1,22 @@
-import React, { useEffect, useState }from "react";
-import { Container, Main, SectionCards, H3, SadBurgerIcon } from "./Styles";
+import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import CardOrder from "../../components/CardOrder/CardOrder";
 import { getOrders } from "../../API/Orders";
 import SadBurger from "../../img/SadBurger.png";
+import HandBurger from "../../img/burgerHandTwo.png";
+import {
+  Container,
+  Main,
+  SectionCards,
+  H3,
+  Image,
+  SadBurgerIcon,
+  SectionImg,
+} from "./Styles";
 
 const FinishedOrders = () => {
   const [allOrdersFinished, setAllOrdersFinished] = useState([]);
-//   const [error, setError] = useState("");
+  //   const [error, setError] = useState("");
   useEffect(() => {
     async function fetchData() {
       try {
@@ -23,9 +32,9 @@ const FinishedOrders = () => {
           setAllOrdersFinished(filterOrder);
         } else {
           console.log(json);
-        //   setError(
-        //     "Ops! Tivemos um problema, atualize a página e tente novamente."
-        //   );
+          //   setError(
+          //     "Ops! Tivemos um problema, atualize a página e tente novamente."
+          //   );
         }
       } catch (error) {
         console.error(error);
@@ -42,7 +51,8 @@ const FinishedOrders = () => {
           <h1>PEDIDOS FINALIZADOS</h1>
           {allOrdersFinished.length === 0 ? (
             <>
-              <SadBurgerIcon src={SadBurger} /> <H3> Sem pedidos prontos por aqui!</H3>
+              <SadBurgerIcon src={SadBurger} />{" "}
+              <H3> Sem pedidos prontos por aqui!</H3>
             </>
           ) : (
             allOrdersFinished.map((order) => (
@@ -50,6 +60,9 @@ const FinishedOrders = () => {
             ))
           )}
         </SectionCards>
+        <SectionImg>
+          <Image src={HandBurger} />
+        </SectionImg>
       </Main>
     </Container>
   );

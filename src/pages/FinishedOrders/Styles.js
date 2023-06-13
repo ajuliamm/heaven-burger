@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export const Container = styled.div`
     background-color: #683923; 
     display: flex;
@@ -14,28 +15,22 @@ export const Container = styled.div`
 
 export const Main = styled.main`
     display:flex;
-    flex-direction:column;
     color: #E99331;
-
 
     @media(min-width: 850px) {
         width:calc(100vw - 100px);
         height:100vh;
         align-items:center;
-        padding:10px;
-       
-
+        padding:10px;  
     }
 `;
 
 export const SadBurgerIcon = styled.img`
     width: 200px;
-    
 `;
 
 export const H3 = styled.h3`
     margin: 40px 0;
-
 `;
 
 export const SectionCards = styled.section`
@@ -51,8 +46,6 @@ export const SectionCards = styled.section`
         
         width: calc(100% - 420px);
         height:100vh;
-        
-        
     }
 
     /*Estilização da barra de rollagem*/
@@ -67,4 +60,21 @@ export const SectionCards = styled.section`
     background: #451E12;
     }
     
+`;
+
+export const Image = styled.img`
+    width:420px;
+`; 
+
+export const SectionImg = styled.section`
+    display:none;
+    @media(min-width: 870px) {
+        display:flex;
+        flex-direction:column;
+        gap:20px;
+        width:420px;
+        height:100vh;
+        background-color:#7B451C;
+        justify-content:end; 
+    }
 `;
