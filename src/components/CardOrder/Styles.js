@@ -79,10 +79,7 @@ export const ButtonIcon = styled.button`
   &:active {
     opacity: 0.9;
   }
-  &.chef {
-    display: block;
-  }
-  &.pending{
+  &.pending.chef{
     display:block;
   }
   &.finished{
@@ -104,13 +101,10 @@ export const ButtonCheck = styled.button`
   display: none;
 
 
-  &.atend {
-    display: block;
-  }
   &.pending{
     display: none;
   }
-  &.finished {
+  &.finished.atend {
     display: flex;
     flex-direction: column;
     justify-content: center;

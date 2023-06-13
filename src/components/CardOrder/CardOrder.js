@@ -14,9 +14,10 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 
 const CardOrder = ({ order }) => {
   const { user } = useContext(UserContext);
-  const finishedOrder = (orderId) => {
-    console.log(orderId);
+  const [deliver,setDeliver] = useState('notDelivered');
 
+  const finishedOrder = (orderId) => {
+    // console.log(orderId);
     updateStatusOrder(orderId, "finished")
       .then((response) => response.json()) //converter a resposta em json
       .then((json) => console.log(json))
@@ -25,23 +26,31 @@ const CardOrder = ({ order }) => {
         throw error;
       });
   };
+
   const convertDateFormat = (dateString) => {
-    const [date, time] = dateString.split(', ');
-    const [day, month, year] = date.split('/')
+    const [date, time] = dateString.split(", ");
+    const [day, month, year] = date.split("/");
     const isoDate = `${year}-${month}-${day}T${time}`;
-  
+
     return isoDate;
   };
+
   const calcTime = (entryTime, exitTime) => {
     const isoEntryTime = convertDateFormat(entryTime);
     const isoExitTime = convertDateFormat(exitTime);
     const calculateTime = new Date(isoExitTime) - new Date(isoEntryTime);
     const horas = Math.floor(calculateTime / (1000 * 60 * 60));
-    const minutos = Math.floor((calculateTime % (1000 * 60 * 60)) / (1000 * 60));
+    const minutos = Math.floor(
+      (calculateTime % (1000 * 60 * 60)) / (1000 * 60)
+    );
     const segundos = Math.floor((calculateTime % (1000 * 60)) / 1000);
     const theElapsedTime = `${horas}h ${minutos}m ${segundos}s`;
 
     return theElapsedTime;
+  };
+
+  const checkOrderDelivered = () => {
+    setDeliver('delivered')
   };
 
   return (
@@ -55,7 +64,6 @@ const CardOrder = ({ order }) => {
       <OrderList>
         {order.products.map((product) => (
           <ItemOrder>
-            
             {product.qty} - {product.product.name}{" "}
           </ItemOrder>
         ))}
@@ -69,18 +77,23 @@ const CardOrder = ({ order }) => {
         className={`${user.role} ${order.status}`}
         onClick={() => finishedOrder(order.id)}
       >
-        
         <i className="bi bi-check2-circle"></i>
       </ButtonIcon>
       <ButtonCheck
         className={`${user.role} ${order.status}`}
-        // onClick={() => finishedOrder(order.id)}
+        onClick={() => checkOrderDelivered()}
       >
-        <i className="bi bi-check-circle"></i>
-        <InfosOrder className="infoCheck">ENTREGAR PEDIDO?</InfosOrder>
+        
+        {deliver === 'notDelivered' 
+        ? (<><i className="bi bi-check-circle"></i> <InfosOrder className="infoCheck">ENTREGAR PEDIDO?</InfosOrder></>)
+        :(<><i class="bi bi-check-circle-fill"></i> <InfosOrder className="infoCheck">PEDIDO ENTREGUE</InfosOrder></>)
+
+        }
+        
       </ButtonCheck>
     </ContainerCard>
   );
 };
 
 export default CardOrder;
+
