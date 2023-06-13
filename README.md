@@ -55,8 +55,10 @@ A aplicação segue um fluxo intuitivo e direcionado a fim de proporcionar a mel
 
 Ao acessar a [aplicação](https://heaven-burger-ajuliamm.vercel.app/), o usuário irá interagir com a página principal de Login, e após isso, a página para inserção das credencias para entrar no sistema. A aplicação está apta a informar o usuário sobre possíveis erros no login (senha ou email incorretos ou algum dos campos vazios, por exemplo).
 
-<img width="500" src="https://github.com/ajuliamm/heaven-burger/assets/30864314/006b9e29-5344-4dd8-93f5-a9dc65abdeb6"/>
-<img width="500" src="https://github.com/ajuliamm/heaven-burger/assets/30864314/f61668ae-fa2f-48b8-aa1f-c8e7bf6868b9"/><br>
+<div align="center">
+  <img width="500" src="https://github.com/ajuliamm/heaven-burger/assets/30864314/006b9e29-5344-4dd8-93f5-a9dc65abdeb6"/>
+  <img width="500" src="https://github.com/ajuliamm/heaven-burger/assets/30864314/f61668ae-fa2f-48b8-aa1f-c8e7bf6868b9"/><br>
+</div>
 <br>
 
 <div align="center">
