@@ -11,13 +11,13 @@ import {
 } from "./Styles";
 import Navbar from "../../components/Navbar/Navbar";
 import CardOrder from "../../components/CardOrder/CardOrder";
-import Button from "../../components/Button/Button";
 import IconClose from "../../img/IconClose.svg";
 import { getOrders } from "../../API/Orders";
 import HandBurger from "../../img/burgerHandTwo.png";
 import ModalEx from "../../components/Modal/Modal";
 import UserContext from "../../contexts/UserContext";
 import SadBurger from "../../img/SadBurger.png";
+// import Button from "../../components/Button/Button";
 
 const BackOrders = () => {
   const { user } = useContext(UserContext);
@@ -40,12 +40,13 @@ const BackOrders = () => {
         const response = await getOrders();
         console.log(response);
         const json = await response.json();
-      
+
         if (Array.isArray(json)) {
-          const filterOrder = json.filter(order=>order.status === 'pending')
-          console.log(filterOrder)
+          const filterOrder = json.filter(
+            (order) => order.status === "pending"
+          );
+          console.log(filterOrder);
           setAllOrdersPending(filterOrder);
-        
         } else {
           console.log(json);
           setError(
@@ -71,7 +72,9 @@ const BackOrders = () => {
               <SadBurgerIcon src={SadBurger} /> <H3>Sem pedidos no momento!</H3>
             </>
           ) : (
-            allOrdersPending.map((order) => <CardOrder order={order} key={order.id} />)
+            allOrdersPending.map((order) => (
+              <CardOrder order={order} key={order.id} />
+            ))
           )}
         </SectionCards>
         <SectionImg>
