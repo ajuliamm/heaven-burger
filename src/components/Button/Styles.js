@@ -76,4 +76,8 @@ export const StyledButton = styled.button`
     &.buttonLogoNavBar{
         background-color: white;;
     }
+
+    &.add{
+        background-color: #C18050;
+    }
 `;
