@@ -24,6 +24,9 @@ export const Main = styled.main`
         padding:10px;  
     }
 `;
+export const H1 = styled.h1`
+  margin: 40px 0;
+`;
 
 export const SadBurgerIcon = styled.img`
     width: 200px;

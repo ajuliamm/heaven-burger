@@ -1,6 +1,9 @@
 import React, { useContext, useState } from "react";
 import UserContext from "../../contexts/UserContext";
-import { updateStatusOrder } from "../../API/Orders";
+import { updateStatusOrder, updateDeliveredOrder } from "../../API/Orders";
+import checkIcon from "../../img/icon_check.png";
+import ModalEx from '../Modal/Modal';
+import { useNavigate } from 'react-router-dom';
 import {
   ContainerCard,
   InfosOrder,
@@ -12,9 +15,20 @@ import {
 } from "./Styles";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
-const CardOrder = ({ order }) => {
+const CardOrder = ({ order}) => {
   const { user } = useContext(UserContext);
   const [deliver,setDeliver] = useState('notDelivered');
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
+  const navigate = useNavigate();
 
   const finishedOrder = (orderId) => {
     // console.log(orderId);
@@ -25,6 +39,11 @@ const CardOrder = ({ order }) => {
         console.log(error);
         throw error;
       });
+      openModal()
+      // setTimeout(navigate('/FinishedOrders'), 5000)
+      
+      
+   
   };
 
   const convertDateFormat = (dateString) => {
@@ -49,13 +68,15 @@ const CardOrder = ({ order }) => {
     return theElapsedTime;
   };
 
-  const checkOrderDelivered = () => {
+  const checkOrderDelivered = (orderId) => {
+    updateDeliveredOrder(orderId, 'delivered')
     setDeliver('delivered')
   };
 
   return (
     <ContainerCard>
-      <InfosOrder className="client">CLIENTE: {order.client} </InfosOrder>
+      <InfosOrder className="client">N° DO PEDIDO: {order.id} </InfosOrder>
+      <InfosOrder >CLIENTE: {order.client} </InfosOrder>
       <InfosOrder>
         {order.status === "pending"
           ? `ENTRADA: ${order.dataEntry}`
@@ -68,7 +89,7 @@ const CardOrder = ({ order }) => {
           </ItemOrder>
         ))}
       </OrderList>
-      <Status className={order.status}>
+      <Status className={`${user.role} ${order.status}`}>
         <InfosOrder>
           {order.status === "pending" ? "AGUARDANDO" : "CONCLUÍDO"}
         </InfosOrder>
@@ -79,14 +100,17 @@ const CardOrder = ({ order }) => {
       >
         <i className="bi bi-check2-circle"></i>
       </ButtonIcon>
+      <ModalEx textH2='Pedido finalizado e pronto para ser entregue!' src={checkIcon} showModal={showModal} setShowModal={setShowModal}/>
+
       <ButtonCheck
         className={`${user.role} ${order.status}`}
-        onClick={() => checkOrderDelivered()}
+        onClick={() => checkOrderDelivered(order.id)}
       >
         
-        {deliver === 'notDelivered' 
-        ? (<><i className="bi bi-check-circle"></i> <InfosOrder className="infoCheck">ENTREGAR PEDIDO?</InfosOrder></>)
-        :(<><i class="bi bi-check-circle-fill"></i> <InfosOrder className="infoCheck">PEDIDO ENTREGUE</InfosOrder></>)
+        {order.delivered === 'delivered' || deliver ==='delivered'
+        ? (<><i class="bi bi-check-circle-fill"></i> <InfosOrder className="infoCheck">PEDIDO ENTREGUE</InfosOrder></>)
+        :(<><i className="bi bi-check-circle"></i> <InfosOrder className="infoCheck">ENTREGAR PEDIDO?</InfosOrder></>)
+        
 
         }
         

@@ -14,7 +14,7 @@ export const postLogin = (typedEmail, typedPassword) => {
             email: typedEmail,
             password: typedPassword
         })
-})
+    })
 }
 
 export const postRegister = (typedEmail, typedPassword, role) => {

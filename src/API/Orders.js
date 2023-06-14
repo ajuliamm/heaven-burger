@@ -51,6 +51,23 @@ export const updateStatusOrder = (orderId, newStatus) => {
     body: JSON.stringify({
       status: newStatus,
       dataExit: newDate,
+      delivered: 'notDelivered'
+     
+    }),
+    
+  })
+};
+export const updateDeliveredOrder = (orderId, deliveredAnswer) => {
+  const newDate = new Date().toLocaleString();
+  return fetch(`${API_URL}/orders/${orderId}`,{
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${AUTH_TOKEN}`,
+      //é auth token ou getitems?
+    },
+    body: JSON.stringify({
+      delivered: deliveredAnswer,
       //colocar p atualiza a nova data?
     }),
     

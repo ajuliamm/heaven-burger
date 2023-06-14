@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import CardOrder from "../../components/CardOrder/CardOrder";
 import { getOrders } from "../../API/Orders";
 import SadBurger from "../../img/SadBurger.png";
 import HandBurger from "../../img/burgerHandTwo.png";
+import UserContext from "../../contexts/UserContext";
+
 import {
   Container,
   Main,
+  H1,
   SectionCards,
   H3,
   Image,
@@ -15,7 +18,9 @@ import {
 } from "./Styles";
 
 const FinishedOrders = () => {
+
   const [allOrdersFinished, setAllOrdersFinished] = useState([]);
+  const { user } = useContext(UserContext);
   //   const [error, setError] = useState("");
   useEffect(() => {
     async function fetchData() {
@@ -45,10 +50,10 @@ const FinishedOrders = () => {
 
   return (
     <Container>
-      <Navbar />
+      <Navbar role={user.role} />
       <Main>
         <SectionCards>
-          <h1>PEDIDOS FINALIZADOS</h1>
+          <H1>PEDIDOS FINALIZADOS</H1>
           {allOrdersFinished.length === 0 ? (
             <>
               <SadBurgerIcon src={SadBurger} />{" "}
@@ -56,7 +61,8 @@ const FinishedOrders = () => {
             </>
           ) : (
             allOrdersFinished.map((order) => (
-              <CardOrder order={order} key={order.id} />
+              <CardOrder order={order} key={order.id}   
+              />
             ))
           )}
         </SectionCards>

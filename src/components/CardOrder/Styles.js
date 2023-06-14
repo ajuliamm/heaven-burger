@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ContainerCard = styled.div`
   background-color: #d49566;
-  min-width: 300px;
+  min-width: 320px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -58,6 +58,14 @@ export const Status = styled.div`
   &.finished{
     background-color: #56791A;
   }
+  &.finished.atend {
+    width:calc(100% - 80px) ;
+    border-radius: 0px 0px 0px 15px;
+  }
+  &.pending.chef {
+    width:calc(100% - 70px) ;
+    border-radius: 0px 0px 0px 15px;
+  }
 `;
 
 export const ButtonIcon = styled.button`
@@ -65,7 +73,7 @@ export const ButtonIcon = styled.button`
   font-size: 30px;
   cursor: pointer;
   background-color: #000000;
-  width: 60px;
+  width: 70px;
   height: 100%;
   align-self: flex-end;
   position: absolute;
