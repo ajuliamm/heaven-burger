@@ -12,6 +12,7 @@ import Add from './pages/adm/Add/Add';
 import AddProducts from './pages/adm/AddProducts/AddProducts';
 import HomeAdm from './pages/adm/HomeAdm/HomeAdm';
 import Products from './pages/adm/Products/Products';
+import Collaborators from './pages/adm/Collaborators/Collaborators';
 import { UserProvider } from './contexts/UserContext';
 
 
@@ -32,6 +33,7 @@ export default function MyRoutes(){
                     <Route path='/Add' element={<Add/>}/>
                     <Route path='/AddProducts' element={<AddProducts/>}/>
                     <Route path='/Products' element={<Products/>}/>
+                    <Route path='Collaborators' element={<Collaborators/>}/>
                 </Routes>
             </Router>
         </UserProvider>
