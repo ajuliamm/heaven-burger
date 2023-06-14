@@ -48,6 +48,9 @@ const FormLogin = (props) => {
                         else if(resp.user.role === 'chef'){
                             navigate('/HomeChef');
                         }
+                        else if(resp.user.role === 'admin'){
+                            navigate('/HomeAdm');
+                        }
                     }
                 })
                 .catch(error => console.log(error));

@@ -22,6 +22,7 @@ export const Infos = styled.p`
   color: #451e12;
   padding-left: 25px;
 
+
   &.client {
     margin-top: 10px;
   }
@@ -54,6 +55,10 @@ export const Button = styled.button`
     height: 30px;
     border-radius: 10px;
     border: none;
+    font-weight: 700;
+    font-size: 15px;
+    box-shadow: 0px 2px 2px 0 #451E12;
+
     &.delete{
         background-color: #C03618;
     }
