@@ -46,7 +46,6 @@ export const updateStatusOrder = (orderId, newStatus) => {
     headers: {
       "Content-Type": "application/json",
       "Authorization": `Bearer ${AUTH_TOKEN}`,
-      //é auth token ou getitems?
     },
     body: JSON.stringify({
       status: newStatus,
@@ -64,11 +63,9 @@ export const updateDeliveredOrder = (orderId, deliveredAnswer) => {
     headers: {
       "Content-Type": "application/json",
       "Authorization": `Bearer ${AUTH_TOKEN}`,
-      //é auth token ou getitems?
     },
     body: JSON.stringify({
       delivered: deliveredAnswer,
-      //colocar p atualiza a nova data?
     }),
     
   })
