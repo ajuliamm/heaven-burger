@@ -11,7 +11,6 @@ const Menu = ({ setListOrder, listOrder, setResume, resume }) => {
   const [allProducts, setAllProducts] = useState([])
   const [dataProducts, setDataProducts] = useState([]);
   const [typeProducts, setTypeProducts] = useState('');
-  const [modalIsOpen, setIsOpen] = useState(false);
   const [error, setError] = useState('');
   const [showModal, setShowModal] = useState(false);
 
