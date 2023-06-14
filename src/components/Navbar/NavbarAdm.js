@@ -23,6 +23,9 @@ import { useNavigate } from 'react-router-dom';
     function changeToProducts(){
         navigate('/Products');
     }
+    function logout(){
+        navigate('/');
+    }
 
     return (
     <Header>
@@ -39,6 +42,9 @@ import { useNavigate } from 'react-router-dom';
             </Button>
             <Button role='botão' aria-label='Clique para sair do app' onClick={changeToProducts}>
             <i class="bi bi-basket2-fill"></i>
+            </Button>
+            <Button role='botão' aria-label='Clique para sair do app' onClick={logout}>
+                <i className='bi bi-box-arrow-left'></i>
             </Button>
         </Nav> 
     </Header>

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    background-color: #7B451C;
+    background-color: #683923;
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -23,4 +23,7 @@ export const Main = styled.main`
     width: 100%;
     height: 100%;
     gap: 10px;
+`;
+export const Icon = styled.span`
+    font-size: 35px;
 `;

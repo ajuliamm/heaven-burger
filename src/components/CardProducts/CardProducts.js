@@ -1,17 +1,44 @@
-import React from "react";
-import { Container, Infos, Div, Button } from './Styles';
+import React, {useState} from "react";
+import Button from "../Button/Button";
+import { Container, Infos, Div } from './Styles';
+import { deleteProducts } from "../../API/Products";
+import ModalEdit from '../Modal/ModalEditProduct';
 
-const CardProducts = () => {
+const CardProducts = ({product}) => {
+    const [showModal, setShowModal] = useState(false);
+
+    const openModal = () => {
+      setShowModal(true);
+    };
+  
+    const editThisProduct = (productId) => {
+        // updateProduct(productId)
+        openModal()
+    }
+        const translateType = (type) => {
+            const translate = {
+                breakfast: 'Café da Manhã',
+                appetizers: 'Aperitivos',
+                hamburgers: 'Hambúrgueres',
+                drinks: 'Bebidas'
+            };
+        
+            return translate[type];
+        };
+
     return (
         <Container>
             <Div/>
-            <Infos>NOME: Pudim</Infos>
-            <Infos>PREÇO: 10,00</Infos>
-            <Infos>TIPO: Sobremesa</Infos>
-            <Div className="buttons">
-                <Button className="delete">EXCLUIR</Button>
-                <Button className="edit">ALTERAR</Button>
+            <Infos>N° PRODUTO: {product.id}</Infos>
+            <Infos>NOME: {product.name}</Infos>
+            <Infos>PREÇO: {product.price.toFixed(2)}</Infos>
+            <Infos>TIPO: {translateType(product.type)}</Infos>
+            <Div className="buttons">    
+                <Button id='cardProduct delete' onClick={()=> deleteProducts(product.id)}>EXCLUIR</Button>
+                <Button id='cardProduct change'onClick={()=>editThisProduct(product.id)}>ALTERAR</Button>
             </Div>
+            <ModalEdit className='edit' product={product} textH2='Alteração de Produto' showModal={showModal} setShowModal={setShowModal}/>
+
         </Container>
     )
 }

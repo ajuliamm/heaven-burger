@@ -1,8 +1,10 @@
 import React from "react";
-import { Container, Main } from "./Styles";
+import { Container, Main, Icon } from "./Styles";
 import Button from "../../../components/Button/Button";
 import NavbarAdm from "../../../components/Navbar/NavbarAdm";
 import { useNavigate } from "react-router-dom";
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
 
 const Add = () => {
 
@@ -23,8 +25,8 @@ const Add = () => {
     <Container>
       <NavbarAdm/>
       <Main>
-        <Button onClick={changeToRegister} id="add">ADICIONAR COLABORADORES</Button>
-        <Button onClick={changeToAddProducts} id="add">ADICIONAR PRODUTOS</Button>
+        <Button onClick={changeToRegister} id="add">ADICIONAR COLABORADORES <Icon><i class="bi bi-person-fill-add"></i></Icon></Button>
+        <Button onClick={changeToAddProducts} id="add">ADICIONAR PRODUTOS <Icon><i class="bi bi-cart-plus-fill"></i></Icon></Button>
       </Main>
     </Container>
   );

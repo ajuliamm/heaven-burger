@@ -72,6 +72,20 @@ export const StyledButton = styled.button`
             opacity: .5;
         }
     }
+    &.save{
+        background-color: #E99331;
+        color: #683923;
+        box-shadow: 0px .5px 2px 0 black;
+        margin-left: 5px;
+    }
+    &.cancel{
+        background-color: #683923;
+        border: 2px solid #E99331;
+        color: #E99331;
+        box-shadow: 0px .5px 2px 0 black;
+        margin-right: 5px;
+    }
+    
 
     &.buttonLogoNavBar{
         background-color: white;;
@@ -79,14 +93,46 @@ export const StyledButton = styled.button`
 
     &.add{
         background-color: #C18050;
+        width: 380px;
+        height: 80px;
+        font-size: 18px;
+        display: flex;
+        justify-content: space-between;
+        padding: 25px;
+        align-items: center;
+
+        &:hover{ 
+            background-color: #E48B26;
+            color: black;
+            opacity: .8;
+        }
+        &:active{
+            opacity: .5;
+        }
     }
     &.cardCollaborator{
         background-color: #B87028;
-        width: 140px;
+        width: 40%;
         height: 40px;
         color:#DB9E71;
-        box-shadow: 0px 2px 2px 0 #451E12;
+        
         &:hover{ 
+            opacity: .8;
+        }
+        &:active{
+            opacity: .5;
+        }
+
+    }
+    &.cardProduct{
+        color:#DB9E71;
+        width: 40%;
+        height: 40px;
+        font-size: 15px;
+        box-shadow: 0px 0px .5px 0 #451E11;
+
+      
+        &:hover{
             opacity: .8;
         }
         &:active{
