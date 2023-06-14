@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Main } from "./Styles";
 import Button from "../../../components/Button/Button";
+import NavbarAdm from "../../../components/Navbar/NavbarAdm";
 import { useNavigate } from "react-router-dom";
 
 const Add = () => {
@@ -20,6 +21,7 @@ const Add = () => {
 
   return (
     <Container>
+      <NavbarAdm/>
       <Main>
         <Button onClick={changeToRegister} id="add">ADICIONAR COLABORADORES</Button>
         <Button onClick={changeToAddProducts} id="add">ADICIONAR PRODUTOS</Button>

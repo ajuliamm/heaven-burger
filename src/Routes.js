@@ -11,6 +11,7 @@ import HomeChef from './pages/chef/HomeChef/HomeChef';
 import Add from './pages/adm/Add/Add';
 import AddProducts from './pages/adm/AddProducts/AddProducts';
 import HomeAdm from './pages/adm/HomeAdm/HomeAdm';
+import Collaborators from './pages/adm/Collaborators/Collaborators';
 import { UserProvider } from './contexts/UserContext';
 
 
@@ -30,6 +31,7 @@ export default function MyRoutes(){
                     <Route path='/FinishedOrders' element={<FinishedOrders/>}/>
                     <Route path='/Add' element={<Add/>}/>
                     <Route path='/AddProducts' element={<AddProducts/>}/>
+                    <Route path='Collaborators' element={<Collaborators/>}/>
                 </Routes>
             </Router>
         </UserProvider>
