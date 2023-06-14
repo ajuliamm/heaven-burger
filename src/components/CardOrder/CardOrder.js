@@ -3,7 +3,6 @@ import UserContext from "../../contexts/UserContext";
 import { updateStatusOrder, updateDeliveredOrder } from "../../API/Orders";
 import checkIcon from "../../img/icon_check.png";
 import ModalEx from '../Modal/Modal';
-import { useNavigate } from 'react-router-dom';
 import {
   ContainerCard,
   InfosOrder,
@@ -15,9 +14,9 @@ import {
 } from "./Styles";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
-const CardOrder = ({ order}) => {
+const CardOrder = ({order}) => {
   const { user } = useContext(UserContext);
-  const [deliver,setDeliver] = useState('notDelivered');
+  const [deliver, setDeliver] = useState('notDelivered');
   const [showModal, setShowModal] = useState(false);
 
   const openModal = () => {
@@ -27,8 +26,6 @@ const CardOrder = ({ order}) => {
   const closeModal = () => {
     setShowModal(false);
   };
-
-  const navigate = useNavigate();
 
   const finishedOrder = (orderId) => {
     // console.log(orderId);
@@ -41,9 +38,6 @@ const CardOrder = ({ order}) => {
       });
       openModal()
       // setTimeout(navigate('/FinishedOrders'), 5000)
-      
-      
-   
   };
 
   const convertDateFormat = (dateString) => {

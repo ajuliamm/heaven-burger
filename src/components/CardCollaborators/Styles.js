@@ -18,10 +18,10 @@ export const ContainerCard = styled.div`
 `;
 
 export const InfosOrder = styled.p`
+  font-weight: bold;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-weight: 700;
   font-size: 14px;
   color: #451e12;
   padding-left: 10px;
