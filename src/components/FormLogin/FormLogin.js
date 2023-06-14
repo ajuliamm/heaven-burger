@@ -25,6 +25,8 @@ const FormLogin = (props) => {
     function btnLogar(e){
         e.preventDefault()
      
+        // listUsers(user.id)
+        
         if(email.current.value === '' || password.current.value === ''){
             msgEmptyFild.current.classList.remove('hidden-p');
             msgErrorLogin.current.classList.add('hidden-p');
