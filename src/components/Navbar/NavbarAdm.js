@@ -17,8 +17,7 @@ import { useNavigate } from 'react-router-dom';
     function changeToAdd(){
         navigate('/Add');
     }
-    function changeToCollaborators
-    (){
+    function changeToCollaborators(){
         navigate('/Collaborators');
     }
     function changeToProducts(){

@@ -80,4 +80,22 @@ export const StyledButton = styled.button`
     &.add{
         background-color: #C18050;
     }
+    &.cardCollaborator{
+        background-color: #B87028;
+        width: 140px;
+        height: 40px;
+        &:hover{ 
+            opacity: .8;
+        }
+        &:active{
+            opacity: .5;
+        }
+
+    }
+    &.delete{
+        background-color: #C03618;
+    }
+    &.change{
+        background-color: #C55707;
+    }
 `;
