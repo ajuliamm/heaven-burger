@@ -12,16 +12,17 @@ import { useNavigate } from 'react-router-dom';
 
     function backToHomeScreen(e) {
         e.preventDefault();
-        navigate('/HomeChef');
+        navigate('/HomeAdm');
     }
-    function changeToBackOrders(){
-        navigate('/BackOrders');
+    function changeToAdd(){
+        navigate('/Add');
     }
-    function changeToFinishedOrders(){
-        navigate('/FinishedOrders');
+    function changeToCollaborators
+    (){
+        navigate('/Collaborators');
     }
-    function logout(){
-        navigate('/');
+    function changeToProducts(){
+        navigate('/Products');
     }
 
     return (
@@ -30,14 +31,15 @@ import { useNavigate } from 'react-router-dom';
             <ImageLogo logoDesktop='logoDesktop' src={LogoBege} />
         </Button>
         <Nav>         
-            <Button role='botão' aria-label='Clique para ver pedidos em andamento' onClick={changeToBackOrders}>
-                <i className='bi bi-stopwatch'></i>
+            <Button role='botão' aria-label='Clique para ver pedidos em andamento' onClick={changeToAdd}>
+            <i className='bi bi-plus-circle'></i>
             </Button>
-            <Button role='botão' aria-label='Clique para ver pedidos finalizados' onClick={changeToFinishedOrders}>
-                <i className='bi bi-check2-circle'></i>
+            <Button role='botão' aria-label='Clique para ver pedidos finalizados' onClick={changeToCollaborators
+            }>
+                <i className="bi bi-person-circle"></i>
             </Button>
-            <Button role='botão' aria-label='Clique para sair do app' onClick={logout}>
-                <i className='bi bi-box-arrow-left'></i>
+            <Button role='botão' aria-label='Clique para sair do app' onClick={changeToProducts}>
+            <i class="bi bi-basket2-fill"></i>
             </Button>
         </Nav> 
     </Header>

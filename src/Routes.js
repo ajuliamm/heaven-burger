@@ -10,6 +10,7 @@ import FinishedOrders from './pages/FinishedOrders/FinishedOrders';
 import HomeChef from './pages/chef/HomeChef/HomeChef';
 import Add from './pages/adm/Add/Add';
 import AddProducts from './pages/adm/AddProducts/AddProducts';
+import HomeAdm from './pages/adm/HomeAdm/HomeAdm';
 import { UserProvider } from './contexts/UserContext';
 
 
@@ -23,6 +24,7 @@ export default function MyRoutes(){
                     <Route path='/Register' element={<Register/>}/>
                     <Route path='/HomeWaiter' element={<HomeWaiter/>}/>
                     <Route path='HomeChef' element={<HomeChef/>}/>
+                    <Route path='HomeAdm' element={<HomeAdm/>}/>
                     <Route path='/NewOrder' element={<NewOrder/>}/>
                     <Route path='/BackOrders' element={<BackOrders/>}/>
                     <Route path='/FinishedOrders' element={<FinishedOrders/>}/>

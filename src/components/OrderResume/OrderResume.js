@@ -27,7 +27,7 @@ import {
 //Modal.setAppElement('#root');
 
 const OrderResume = ({ setResume, resume }) => {
-  const [modalIsOpen, setIsOpen] = useState(false);
+
   const [sumPrice, setSumPrice] = useState(0);
   //const {user} = useContext(UserContext);
   const { user } = useContext(UserContext) || {}; // Verifica se UserContext é undefined
