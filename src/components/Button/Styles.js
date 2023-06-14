@@ -84,6 +84,8 @@ export const StyledButton = styled.button`
         background-color: #B87028;
         width: 140px;
         height: 40px;
+        color:#DB9E71;
+        box-shadow: 0px 2px 2px 0 #451E12;
         &:hover{ 
             opacity: .8;
         }
