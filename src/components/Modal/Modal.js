@@ -5,12 +5,6 @@ import Button from "../Button/Button.js";
 
 const ModalEx = ({src, textH2, showModal, setShowModal}) => {
 
-//   const [modalIsOpen, setIsOpen] = useState(false);
-  
-//   function openModal() {
-//     setIsOpen(true);
-//   }
-
   function closeModal() {
     setShowModal(false);
   }
@@ -30,9 +24,8 @@ const ModalEx = ({src, textH2, showModal, setShowModal}) => {
             width: "380px",
             height: "350px",
             borderRadius: "10px",
-       
-
           },
+          
           content: {
             fontSize: "10px",
             display: "flex",

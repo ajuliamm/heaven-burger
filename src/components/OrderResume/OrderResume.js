@@ -23,22 +23,14 @@ import {
   SadBurgerIcon,
 } from "./Styles";
 
-//codigo necessário para os recursos de acessibilidade
-//Modal.setAppElement('#root');
-
 const OrderResume = ({ setResume, resume }) => {
 
   const [sumPrice, setSumPrice] = useState(0);
-  //const {user} = useContext(UserContext);
   const { user } = useContext(UserContext) || {}; // Verifica se UserContext é undefined
   const [showModal, setShowModal] = useState(false);
 
   const openModal = () => {
     setShowModal(true);
-  };
-
-  const closeModal = () => {
-    setShowModal(false);
   };
 
   const navigate = useNavigate();

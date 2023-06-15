@@ -64,9 +64,6 @@ export const alterUser = (id, newAlter) => {
       "Content-Type": "application/json",
       'Authorization': `Bearer ${AUTH_TOKEN}`,
     },
-    body: JSON.stringify({
-      id: id,
-      newAlter: newAlter,
-    }),
+    body: JSON.stringify(newAlter),
   });
 };
