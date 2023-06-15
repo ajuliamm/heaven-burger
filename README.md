@@ -33,10 +33,13 @@ Quinto projeto desenvolvido para o Bootcamp de Desenvolvimento Web da [@Laborat�
 
 ## Índice
 
-* [1. Instruções para Login](#1-instrucoes-para-Login) 🗒️
-* [2. Histórias de Usuário](#2-historias-de-usuario) 🖊️
-* [3. Cenário 1 - Atendente](#3-cenario-1-atendente) 🖊️
-* [4. Cenário 2 - Chefe](#4-cenario-2-chefe)
+* [1. Instruções para Login](#1-instruções-para-login) 🗒️
+* [2. Histórias de Usuário](#2-histórias-de-usuário) 🖊️
+* [3. Cenário 1 - Atendente](#3-cenário-1-atendente) 🍔
+* [4. Cenário 2 - Chefe](#4-cenário-2-chefe) 📌
+* [5. Cenário 3 - Administrador](#5-cenário-3--administrador) 🔒
+* [6. Responsividade](#6-responsividade) 🔃
+* [7. Authors](#7-authors) 📎
 
 ***
 ## 1. Instruções para Login 🗒️
@@ -100,7 +103,7 @@ Ao acessar a [aplicação](https://heaven-burger-ajuliamm.vercel.app/), o usuár
 ***
 ## 3. Cenário 1 - Atendente
 
-O perfil de atendente, ao efetuar o login, se depara com a tela inicial e o menu lateral com opções de interação (Novo Pedido, Pedidos em Espera, Pedidos Finalizados e Logout). Ao clicar em novo pedido, o atendente visualiza o cardápio dividido em 4 partes: Café da manhã, Hamburguers, Aperitivos e Bebidas.
+O perfil de Atendente, ao efetuar o login, o usuário irá se deparar com a tela inicial e o menu lateral com opções de interação (Novo Pedido, Pedidos em Espera, Pedidos Finalizados e Logout). Ao clicar em novo pedido, o atendente visualiza o cardápio dividido em 4 partes: Café da manhã, Hamburguers, Aperitivos e Bebidas.
 <div align="center">
   <img width="500" src="https://github.com/ajuliamm/heaven-burger/assets/30864314/3df2a1fd-e223-4694-935c-ba37e3532c48"/>
   <img width="500" src="https://github.com/ajuliamm/heaven-burger/assets/30864314/991debf2-319c-4828-ba06-e12220ddb29e"/>
@@ -121,7 +124,7 @@ Ao confirmar o envio do pedido, o sistema alerta se foi concluído com sucesso. 
 ***
 ## 4. Cenário 2 - Chefe
 
-O perfil de Chefe, ao realizar login se depara com a tela inicial e o menu lateral com apenas as opções de Pedidos em Espera, Pedidos Finalizados e Logout.
+O perfil de Chefe, ao realizar login, o usuário irá se deparar com a tela inicial e o menu lateral com apenas as opções de Pedidos em Espera, Pedidos Finalizados e Logout.
 
 <div align="center">
   <img width="500" src="https://github.com/ajuliamm/heaven-burger/assets/30864314/1049c91f-94cd-4035-9454-71dd8eb4fcef"/>
@@ -133,6 +136,45 @@ Ao clicar no ícone de Pedidos em Espera, o chefe terá a visualização dos ped
   <img width="500" src="https://github.com/ajuliamm/heaven-burger/assets/30864314/a864bd1c-0585-4e67-9166-806d51c0023f"/>
 </div>
 
+***
+## 5. Cenário 3 - Administrador
+
+O perfil de Administrador ao efetuar o login, irá se deparar com a tela inicial e o menu lateral com opções de Cadastrar Colaboradores/Produtos, Lista de Colaboradores, Lista de Produtos e Logout.  Ao clicar em Cadastrar, irá ter a opção de cadastrar produtos ou colaboradores.
+<div align="center">
+  <img width="500" src="https://github.com/ajuliamm/heaven-burger/assets/30864314/a181e0a0-4b08-4e40-8119-f2064d4f226b"/>
+  <img width="500" src="https://github.com/ajuliamm/heaven-burger/assets/30864314/3986da8b-fa5d-43b5-85a6-8528efb61729"/>
+</div>
+
+Ao clicar em colaboradores, o usuário conseguirá ver a lista de todos os colaboradores cadastrados na aplicação. Nessa tela, poderá alterar um colaborador cadastrado ou excluir.
+
+<div align="center">
+  <img width="500" src="https://github.com/ajuliamm/heaven-burger/assets/30864314/5fef6473-5a87-4e26-9e18-6ca15f617deb"/>
+  <img width="500" src="https://github.com/ajuliamm/heaven-burger/assets/30864314/2ce9b4c3-ac6b-4afc-9d5c-5d3d2c0c623a"/>
+</div>
+
+O Administrador terá acesso a tela com a lista dos produtos cadastrados. Nessa tela, poderá alterar os existentes ou excluir algum produto.
+
+<div align="center">
+  <img width="500" src="https://github.com/ajuliamm/heaven-burger/assets/30864314/ebfc070b-a42f-4a50-bac8-02bc95634279"/>
+  <img width="500" src="https://github.com/ajuliamm/heaven-burger/assets/30864314/423d7345-511b-4ad7-b0ad-a0cf3c290550"/>
+</div>
+
+***
+## 6. Responsividade
+
+A aplicação é responsiva para todos os tamanhos de tela. A adaptação do sistema preza pela experiência dos usuários e está apta para atender as mais diversas necessidades.
+<div align="center">
+  <img width="400" src="https://github.com/ajuliamm/heaven-burger/assets/30864314/47f81b5f-5345-4266-9e8a-9adc13a284fb"/>
+  <img width="400" src="https://github.com/ajuliamm/heaven-burger/assets/30864314/8a22d553-4aff-4347-be24-b9a8c2c840cd"/>
+  <img width="400" src="https://github.com/ajuliamm/heaven-burger/assets/30864314/5050b361-5c07-45ef-8ba0-d9ee7880482f"/>
+</div>
+
+
+***
+## 7. Authors
+
+- Ana Leticia B. Prince: [Linkedin](https://www.linkedin.com/in/analeticiabacha/)
+- Angelina Melo: [Linkedin](https://www.linkedin.com/in/angelinamelo/)
 
 ***
 Em construção :construction:
