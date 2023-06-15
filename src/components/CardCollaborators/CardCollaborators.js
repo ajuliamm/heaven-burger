@@ -10,18 +10,26 @@ import checkIcon from "../../img/icon_check.png";
 const CardCollaborator = ({ eachUser }) => {
   const [showModalEdit, setShowModalEdit] = useState(false);
   const [showModalDel, setShowModalDel] = useState(false);
-
+  const [cardVisible, setCardVisible] = useState(true);
 
   const openModalEdit = () => {
     setShowModalEdit(true);
   };
   const openModalDel = () => {
     setShowModalDel(true);
+    setTimeout(() => {
+      setCardVisible(false);
+    }, 2600)
   };
 
   const alterUserModal = (eachUser) => {
     openModalEdit();
   };
+
+  if (!cardVisible) {
+    return null; //retorna null se o card não estiver visível
+  }
+
 
   return (
     <ContainerCard>

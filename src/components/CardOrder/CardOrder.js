@@ -18,26 +18,28 @@ const CardOrder = ({order}) => {
   const { user } = useContext(UserContext);
   const [deliver, setDeliver] = useState('notDelivered');
   const [showModal, setShowModal] = useState(false);
+  const [cardVisible, setCardVisible] = useState(true);
 
   const openModal = () => {
     setShowModal(true);
   };
 
-  const closeModal = () => {
-    setShowModal(false);
-  };
-
   const finishedOrder = (orderId) => {
-    // console.log(orderId);
     updateStatusOrder(orderId, "finished")
-      .then((response) => response.json()) //converter a resposta em json
-      .then((json) => console.log(json))
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json);
+        openModal();
+        setTimeout(() => {
+          setCardVisible(false);
+        }, 2000);
+        
+      })
       .catch((error) => {
         console.log(error);
         throw error;
       });
-      openModal()
-      // setTimeout(navigate('/FinishedOrders'), 5000)
+      
   };
 
   const convertDateFormat = (dateString) => {
@@ -63,9 +65,13 @@ const CardOrder = ({order}) => {
   };
 
   const checkOrderDelivered = (orderId) => {
-    updateDeliveredOrder(orderId, 'delivered')
-    setDeliver('delivered')
+    updateDeliveredOrder(orderId, 'delivered');
+    setDeliver('delivered');
   };
+
+  if (!cardVisible) {
+    return null; //retorna null se o card não estiver visível
+  }
 
   return (
     <ContainerCard>
@@ -94,7 +100,7 @@ const CardOrder = ({order}) => {
       >
         <i className="bi bi-check2-circle"></i>
       </ButtonIcon>
-      <ModalEx textH2='Pedido finalizado e pronto para ser entregue!' src={checkIcon} showModal={showModal} setShowModal={setShowModal}/>
+      <ModalEx textH2='Pedido pronto para ser entregue!' src={checkIcon} showModal={showModal} setShowModal={setShowModal}/>
 
       <ButtonCheck
         className={`${user.role} ${order.status}`}
@@ -104,7 +110,7 @@ const CardOrder = ({order}) => {
         {order.delivered === 'delivered' || deliver ==='delivered'
         ? (<><i class="bi bi-check-circle-fill"></i> <InfosOrder className="infoCheck">PEDIDO ENTREGUE</InfosOrder></>)
         :(<><i className="bi bi-check-circle"></i> <InfosOrder className="infoCheck">ENTREGAR PEDIDO?</InfosOrder></>)
-        
+
 
         }
         

@@ -91,6 +91,7 @@ const OrderResume = ({ setResume, resume }) => {
       postOrders(userId, client, resume, currentDateTime).then(() => {
         setResume([]);
         openModal();
+        clientName.current.value = "";
       });
     }
   }

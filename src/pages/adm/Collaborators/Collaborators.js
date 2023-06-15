@@ -7,6 +7,7 @@ import IconClose from "../../../img/IconClose.svg";
 import { listUsers } from "../../../API/Users";
 
 const Collaborators = () => {
+  
   const [allUsers, setAllUsers] = useState([]);
   const [error, setError] = useState("");
   const [showModal, setShowModal] = useState(false);
