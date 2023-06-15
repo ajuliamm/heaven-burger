@@ -1,17 +1,10 @@
 import Modal from "react-modal";
-import React, {useState} from "react";
-import { Input, Label,SelectTypeProduct, H2 } from "./Styles.js";
+import React, { useState } from "react";
+import { Input, Label, SelectTypeProduct, H2 } from "./Styles.js";
 import Button from "../Button/Button.js";
 import { updateProduct } from "../../API/Products.js";
 
-const ModalEdit = ({product, textH2, showModal, setShowModal}) => {
-
-//   const [modalIsOpen, setIsOpen] = useState(false);
-  
-//   function openModal() {
-//     setIsOpen(true);
-//   }
-
+const ModalEdit = ({ product, textH2, showModal, setShowModal }) => {
   function closeModal() {
     setShowModal(false);
   }
@@ -23,21 +16,23 @@ const ModalEdit = ({product, textH2, showModal, setShowModal}) => {
   const changePrice = (event) => {
     setValuePrice(event.target.value);
   };
+
   const changeName = (event) => {
     setValueName(event.target.value);
   };
+
   const changeType = (event) => {
     setValueType(event.target.value);
   };
+
   const saveInfos = () => {
     const infoChanges = {
-        name:valueName,
-        price:valuePrice,
-        type: valueType
+      name: valueName,
+      price: valuePrice,
+      type: valueType,
     };
     updateProduct(product.id, infoChanges);
-    setShowModal(false)
-
+    setShowModal(false);
   };
 
   return (
@@ -45,7 +40,7 @@ const ModalEdit = ({product, textH2, showModal, setShowModal}) => {
       <Modal
         isOpen={showModal}
         onRequestClose={closeModal}
-        contentLabel="Modal enviar pedido"
+        contentLabel="Modal alterar produto"
         style={{
           overlay: {
             position: "absolute",
@@ -55,9 +50,8 @@ const ModalEdit = ({product, textH2, showModal, setShowModal}) => {
             width: "380px",
             height: "350px",
             borderRadius: "10px",
-       
-
           },
+
           content: {
             fontSize: "10px",
             display: "flex",
@@ -69,38 +63,45 @@ const ModalEdit = ({product, textH2, showModal, setShowModal}) => {
             background: "rgb(69,30,18,80%)",
             borderRadius: "15px",
             color: "#E99331",
-   
           },
         }}
       >
-        
         <H2 className="edit">{textH2}</H2>
         <div>
-            <Label>Nome:</Label>
-            <Input type="text" value={valueName} onChange={changeName} placeholder="Nome do produto"></Input>
+          <Label>Nome:</Label>
+          <Input
+            type="text"
+            value={valueName}
+            onChange={changeName}
+            placeholder="Nome do produto"
+          ></Input>
         </div>
         <div>
-            <Label>Preço:</Label>
-            <Input type="text" value={valuePrice} onChange={changePrice} placeholder="10,00"></Input>
+          <Label>Preço:</Label>
+          <Input
+            type="text"
+            value={valuePrice}
+            onChange={changePrice}
+            placeholder="10,00"
+          ></Input>
         </div>
         <div>
-            <Label placeholder="Hamburguer">Tipo:</Label>
-            <SelectTypeProduct value={valueType} onChange={changeType}>
-                <option value='breakfast'>CAFÉ DA MANHÃ</option>
-                <option value='appetizers'>APERITIVOS</option>
-                <option value='hamburgers'>HAMBURGUERS</option>
-                <option value='drinks'>BEBIDAS</option>
-            </SelectTypeProduct>
+          <Label placeholder="Hamburguer">Tipo:</Label>
+          <SelectTypeProduct value={valueType} onChange={changeType}>
+            <option value="breakfast">CAFÉ DA MANHÃ</option>
+            <option value="appetizers">APERITIVOS</option>
+            <option value="hamburgers">HAMBURGUERS</option>
+            <option value="drinks">BEBIDAS</option>
+          </SelectTypeProduct>
         </div>
         <div>
-            <Button id="buttonModal cancel" onClick={()=>setShowModal(false)}>
+          <Button id="buttonModal cancel" onClick={() => setShowModal(false)}>
             CANCELAR
-            </Button>
-            <Button id="buttonModal save" onClick={()=>saveInfos()}>
+          </Button>
+          <Button id="buttonModal save" onClick={() => saveInfos()}>
             SALVAR
-        </Button>
+          </Button>
         </div>
-        
       </Modal>
     </>
   );

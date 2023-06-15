@@ -18,10 +18,6 @@ const Menu = ({ setListOrder, listOrder, setResume, resume }) => {
     setShowModal(true);
   };
 
-  const closeModal = () => {
-    setShowModal(false);
-  };
-
   useEffect(() => {
     async function fetchData() {
       try {
