@@ -47,3 +47,24 @@ export const updateProduct = (productId, newInfos) => {
     throw error
 });
   };
+
+  export const postRegisterProduct = (nameProduct, priceProduct, typeProduct) => {
+    return fetch(`${API_URL}/products`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${AUTH_TOKEN}`,
+      },
+      body: JSON.stringify({
+        name: nameProduct,
+        price: priceProduct,
+        type: typeProduct,
+      }),
+    })
+      .then((response) => response.json()) //converter a resposta em json
+      .then((json) => console.log(json))
+      .catch((error) => {
+        console.log(error);
+        throw error;
+      });
+  };

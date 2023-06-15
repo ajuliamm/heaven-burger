@@ -22,8 +22,15 @@ export const Main = styled.main`
     align-items: center;
     width: 100%;
     height: 100%;
-    gap: 10px;
+    gap: 20px;
 `;
 export const Icon = styled.span`
-    font-size: 35px;
+    font-size: 70px;
+    @media(min-width: 670px){
+        font-size: 100px;
+        }
+`;
+export const Div = styled.div`
+    display: flex;
+    gap: 10px;
 `;

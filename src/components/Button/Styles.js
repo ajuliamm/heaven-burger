@@ -93,13 +93,19 @@ export const StyledButton = styled.button`
 
     &.add{
         background-color: #C18050;
-        width: 380px;
-        height: 80px;
-        font-size: 18px;
+        width: 150px;
+        height: 150px;
+        font-size: 15px;
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
         padding: 25px;
         align-items: center;
+        @media(min-width: 670px){
+            font-size: 24px;
+            width: 250px;
+            height: 250px;
+        }
 
         &:hover{ 
             background-color: #E48B26;
