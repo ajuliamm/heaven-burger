@@ -36,6 +36,7 @@ Quinto projeto desenvolvido para o Bootcamp de Desenvolvimento Web da [@Laborat�
 * [1. Instruções para Login](#1-instrucoes-para-Login) 🗒️
 * [2. Histórias de Usuário](#2-historias-de-usuario) 🖊️
 * [3. Cenário 1 - Atendente](#3-cenario-1-atendente) 🖊️
+* [4. Cenário 2 - Chefe](#4-cenario-2-chefe)
 
 ***
 ## 1. Instruções para Login 🗒️
@@ -99,7 +100,7 @@ Ao acessar a [aplicação](https://heaven-burger-ajuliamm.vercel.app/), o usuár
 ***
 ## 3. Cenário 1 - Atendente
 
-O perfil de atendente, ao efetuar o login, se depara com a tela inicial e o menu lateral com opções de interação (Novo Pedido, Pedidos em Espera, Pedidos Finalizados e Logout). Ao clicar em novo pedido, o atendente visualiza o cardápio dividido em 4 partes: Café da manhã, Hamburguers, Apretivios e Bebidas.
+O perfil de atendente, ao efetuar o login, se depara com a tela inicial e o menu lateral com opções de interação (Novo Pedido, Pedidos em Espera, Pedidos Finalizados e Logout). Ao clicar em novo pedido, o atendente visualiza o cardápio dividido em 4 partes: Café da manhã, Hamburguers, Aperitivos e Bebidas.
 <div align="center">
   <img width="500" src="https://github.com/ajuliamm/heaven-burger/assets/30864314/3df2a1fd-e223-4694-935c-ba37e3532c48"/>
   <img width="500" src="https://github.com/ajuliamm/heaven-burger/assets/30864314/991debf2-319c-4828-ba06-e12220ddb29e"/>
@@ -111,6 +112,26 @@ Ao clicar em algum cardápio (por exemplo: hamburguers) o atendente visualiza as
   <img width="500" src="https://github.com/ajuliamm/heaven-burger/assets/30864314/24ebc7a2-5eeb-4ea7-b5dd-2b2ab5377df3"/>
 </div>
 
+Ao confirmar o envio do pedido, o sistema alerta se foi concluído com sucesso. Após isso, as informações anteriores são descartadas para que o usuário possa fazer um novo pedido. O pedido realizado é enviado para a cozinha, onde poderá ser visualizado pelo Chefe. Após a aprovação pelo Chefe, o Atendente conseguirá servir os pedidos nas mesas.
+
+<div align="center">
+  <img width="500" src="https://github.com/ajuliamm/heaven-burger/assets/30864314/c66a3f48-1c7b-427f-9704-0298ff80d39d"/>
+</div>
+
+***
+## 4. Cenário 2 - Chefe
+
+O perfil de Chefe, ao realizar login se depara com a tela inicial e o menu lateral com apenas as opções de Pedidos em Espera, Pedidos Finalizados e Logout.
+
+<div align="center">
+  <img width="500" src="https://github.com/ajuliamm/heaven-burger/assets/30864314/1049c91f-94cd-4035-9454-71dd8eb4fcef"/>
+</div>
+
+Ao clicar no ícone de Pedidos em Espera, o chefe terá a visualização dos pedidos que foram anotados pelo atendente e terá a opção de finalizá-los.
+<div align="center">
+  <img width="500" src="https://github.com/ajuliamm/heaven-burger/assets/30864314/e960fd6c-93f1-4585-b03a-afe4db7a1ecf"/>
+  <img width="500" src="https://github.com/ajuliamm/heaven-burger/assets/30864314/a864bd1c-0585-4e67-9166-806d51c0023f"/>
+</div>
 
 
 ***
