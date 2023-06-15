@@ -21,7 +21,7 @@ export const H1 = styled.h1`
 
 
 export const MessageError = styled.p`
-    color: ${props => props.color};
+    color:#64300F;
     font-weight: 700;
     font-size: 18px;
     &.hidden-p{
