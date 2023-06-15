@@ -9,6 +9,7 @@ import ModalEx from "../Modal/Modal";
 
 const CardProducts = ({ product }) => {
   const [showModal, setShowModal] = useState(false);
+  const [cardVisible, setCardVisible] = useState(true);
   const [showModalDel, setShowModalDel] = useState(false);
 
   const openModal = () => {
@@ -21,6 +22,13 @@ const CardProducts = ({ product }) => {
   const editThisProduct = () => {
     openModal();
   };
+
+  const deleteItem = (item) => {
+    deleteProducts(item);
+    setTimeout(() => {
+      setCardVisible(false);
+    }, 1000);
+  }
   
   const translateType = (type) => {
     const translate = {
@@ -32,6 +40,10 @@ const CardProducts = ({ product }) => {
 
     return translate[type];
   };
+
+  if (!cardVisible) {
+    return null; //retorna null se o card não estiver visível
+  }
 
   return (
     <Container>

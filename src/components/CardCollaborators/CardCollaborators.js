@@ -19,7 +19,7 @@ const CardCollaborator = ({ eachUser }) => {
     setShowModalDel(true);
     setTimeout(() => {
       setCardVisible(false);
-    }, 2600)
+    }, 2600);
   };
 
   const alterUserModal = (eachUser) => {
