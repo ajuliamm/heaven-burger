@@ -111,12 +111,12 @@ const OrderResume = ({ setResume, resume }) => {
           <>
             <SadBurgerIcon src={SadBurger} /> <H3>Sem pedidos no momento!</H3>
           </>
-        ) : (
+        ) : ( 
           resume.map((product) => (
             <DivItem key={product.product.id}>
               <InfoItem className="styleName">{product.product.name}</InfoItem>
               <InfoItem className="stylePrice">
-                {product.product.price.toFixed(2)}
+                {parseFloat(product.product.price).toFixed(2)}
               </InfoItem>
               <InfoItem>
                 <DivQtd>

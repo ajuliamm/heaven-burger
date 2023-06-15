@@ -10,7 +10,7 @@ const ModalEdit = ({ product, textH2, showModal, setShowModal }) => {
   }
 
   const [valueName, setValueName] = useState(product.name);
-  const [valuePrice, setValuePrice] = useState(product.price);
+  const [valuePrice, setValuePrice] = useState(parseFloat(product.price).toFixed(2));
   const [valueType, setValueType] = useState(product.type);
 
   const changePrice = (event) => {
@@ -79,7 +79,7 @@ const ModalEdit = ({ product, textH2, showModal, setShowModal }) => {
         <div>
           <Label>Preço:</Label>
           <Input
-            type="text"
+            type='number'
             value={valuePrice}
             onChange={changePrice}
             placeholder="10,00"
