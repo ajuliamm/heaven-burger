@@ -21,24 +21,26 @@ const Form = (props) => {
     setModalUser(true);
   }
 
-  function changeToHomeScreen(e) {
+  function changeToAdd(e) {
     e.preventDefault();
-    navigate("/");
+    navigate("/Add");
   }
 
   function btnLogar(e) {
     e.preventDefault();
-
-    if (email.current.value === "" || password.current.value === "") {
+    console.log(team.current.value)
+    if (email.current.value === '' || password.current.value === '' || team.current.value === '...') {
       msgEmptyFild.current.classList.remove("hidden-p");
       msgErrorLogin.current.classList.add("hidden-p");
     } else {
       msgEmptyFild.current.classList.add("hidden-p");
-      postRegister(
-        email.current.value,
-        password.current.value,
-        team.current.value
-      ).then(openModal());
+      postRegister(email.current.value, password.current.value, team.current.value ).then(()=>{
+        openModal();
+        email.current.value = '';
+        password.current.value = '';
+        team.current.value = '...';
+
+    });
     }
   }
   return (
@@ -71,7 +73,7 @@ const Form = (props) => {
       >
         CADASTRAR
       </Button>
-      <Button type="button" id={props.class} onClick={changeToHomeScreen}>
+      <Button type="button" id={props.class} onClick={changeToAdd}>
         VOLTAR
       </Button>
       <ModalRegister
