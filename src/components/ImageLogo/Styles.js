@@ -5,11 +5,21 @@ export const StyledImage = styled.img`
 
 
     &.logoDesktop{
-        width: 100px;
-        display:none;
+        width: 65px;
+        &:hover{
+           width: 70px;
+           transition: width 0.2s linear;
+        -webkit-transition:width 0.3s;
+
+        }
 
         @media(min-width:850px){
             display:block;
+            width: 100px;
+            &:hover{
+           width: 103px;
+
+        }
         }
     }
 

@@ -8,4 +8,6 @@ export const StyledSelect = styled.select`
     border-radius: 5px;
     font-weight: 700;
     font-size: 16px;
+    outline: none;
+    border: none;
 `;

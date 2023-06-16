@@ -5,6 +5,8 @@ import { getOrders } from "../../API/Orders";
 import SadBurger from "../../img/SadBurger.png";
 import HandBurger from "../../img/burgerHandTwo.png";
 import UserContext from "../../contexts/UserContext";
+import Modal from "../../components/Modal/Modal";
+import IconClose from "../../img/IconClose.svg";
 
 import {
   Container,
@@ -21,25 +23,27 @@ const FinishedOrders = () => {
 
   const [allOrdersFinished, setAllOrdersFinished] = useState([]);
   const { user } = useContext(UserContext);
-  //   const [error, setError] = useState("");
+  const [error, setError] = useState("");
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal(true);
+  };
+
   useEffect(() => {
     async function fetchData() {
       try {
         const response = await getOrders();
-        console.log(response);
         const json = await response.json();
 
         if (Array.isArray(json)) {
           const filterOrder = json.filter(
             (order) => order.status === "finished"
           );
-          console.log(filterOrder);
           setAllOrdersFinished(filterOrder);
         } else {
-          console.log(json);
-          //   setError(
-          //     "Ops! Tivemos um problema, atualize a página e tente novamente."
-          //   );
+          setError("Ops! Tivemos um problema, atualize a página e tente novamente.");
+          openModal();
         }
       } catch (error) {
         console.error(error);
@@ -69,6 +73,12 @@ const FinishedOrders = () => {
         <SectionImg>
           <Image src={HandBurger} />
         </SectionImg>
+        <Modal
+          textH2={error}
+          src={IconClose}
+          showModal={showModal}
+          setShowModal={setShowModal}
+        />
       </Main>
     </Container>
   );

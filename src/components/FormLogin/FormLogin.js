@@ -40,8 +40,6 @@ const FormLogin = (props) => {
                         return msgErrorLogin.current.classList.remove('hidden-p');
                     }else{
                         const resp = await response.json()
-
-                        console.log(resp);
                         setItens(resp.accessToken);
                         addToUser(resp.user);
                         if(resp.user.role === 'atend'){

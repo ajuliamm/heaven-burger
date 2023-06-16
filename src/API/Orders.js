@@ -19,12 +19,6 @@ export const postOrders = (userId, client, arrProducts, dateOrder) => {
       dataEntry: dateOrder,
     }),
   })
-    .then(response => response.json()) // Converter a resposta em json
-    .then(json => console.log(json))
-    .catch(error => {
-      console.log(error)
-      throw error
-    });
 };
 
 export const getOrders = () => {
@@ -51,13 +45,10 @@ export const updateStatusOrder = (orderId, newStatus) => {
       status: newStatus,
       dataExit: newDate,
       delivered: 'notDelivered'
-     
-    }),
-    
+    })
   })
 };
 export const updateDeliveredOrder = (orderId, deliveredAnswer) => {
-  const newDate = new Date().toLocaleString();
   return fetch(`${API_URL}/orders/${orderId}`,{
     method: "PATCH",
     headers: {
@@ -67,7 +58,6 @@ export const updateDeliveredOrder = (orderId, deliveredAnswer) => {
     body: JSON.stringify({
       delivered: deliveredAnswer,
     }),
-    
   })
 };
 

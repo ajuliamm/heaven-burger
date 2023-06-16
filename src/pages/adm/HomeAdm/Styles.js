@@ -7,6 +7,7 @@ export const Container = styled.div`
     align-items: center;
     width: 100vw;
     min-height: 100vh;
+    overflow: hidden;
 
     @media(min-width: 850px) {
         flex-direction:row;

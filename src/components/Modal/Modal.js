@@ -1,7 +1,10 @@
 import Modal from "react-modal";
-import React, { useState } from "react";
+import React from "react";
 import { ImgIcon, H2 } from "./Styles.js";
 import Button from "../Button/Button.js";
+
+// Código necessário para os recursos de acessibilidade
+Modal.setAppElement('#root');
 
 const ModalEx = ({src, textH2, showModal, setShowModal}) => {
 

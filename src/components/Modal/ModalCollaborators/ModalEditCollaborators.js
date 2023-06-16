@@ -1,17 +1,21 @@
 import Modal from "react-modal";
 import React, { useState } from "react";
-import { H2, Input, Label } from "./Styles";
+import { H2, Input, Label, SelectRole } from "./Styles";
 import Button from "../../Button/Button";
 import { alterUser } from "../../../API/Users";
 
+// Código necessário para os recursos de acessibilidade
+Modal.setAppElement('#root');
+
 const ModalEditCollaborators = ({
-  eachUser,
+  eachUserData,
+  setEachUserData,
   textH2,
   showModal,
   setShowModal,
 }) => {
-  const [valueEmail, setValueEmail] = useState(eachUser.email);
-  const [valueRole, setValueRole] = useState(eachUser.role);
+  const [valueEmail, setValueEmail] = useState(eachUserData.email);
+  const [valueRole, setValueRole] = useState(eachUserData.role);
 
   const changeEmail = (event) => {
     setValueEmail(event.target.value);
@@ -30,9 +34,15 @@ const ModalEditCollaborators = ({
       email: valueEmail,
       role: valueRole,
     };
-    console.log(infoChanges);
-    alterUser(eachUser.id, infoChanges);
-    setShowModal(false);
+    alterUser(eachUserData.id, infoChanges).then(()=>{
+      setEachUserData({
+        ...eachUserData, 
+        email:valueEmail,
+        role: valueRole
+      })
+      setShowModal(false);
+    })
+    
   };
 
   return (
@@ -78,12 +88,11 @@ const ModalEditCollaborators = ({
         </div>
         <div>
           <Label>Cargo:</Label>
-          <Input
-            type="text"
-            placeholder="Cargo"
-            value={valueRole}
-            onChange={changerole}
-          ></Input>
+          <SelectRole value={valueRole} onChange={changerole}>
+            <option value='atend'>Atendente</option>
+            <option value='chef'>Chefe de Cozinha</option>
+            <option value='admin'>Administrador</option>
+          </SelectRole>
         </div>
         <div>
           <Button id="buttonModal cancel" onClick={() => closeModal()}>

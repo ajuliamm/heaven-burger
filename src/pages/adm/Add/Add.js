@@ -29,8 +29,8 @@ const Add = () => {
       <Main>
         <ImageLogo src={LogoOrange}/>
         <Div>
-          <Button onClick={changeToRegister} id="add">ADICIONAR COLABORADORES <Icon><i class="bi bi-person-fill-add"></i></Icon></Button>
-          <Button onClick={changeToAddProducts} id="add">ADICIONAR PRODUTOS <Icon><i class="bi bi-cart-plus-fill"></i></Icon></Button>
+          <Button onClick={changeToRegister} id="add">ADICIONAR COLABORADORES <Icon><i className="bi bi-person-fill-add"></i></Icon></Button>
+          <Button onClick={changeToAddProducts} id="add">ADICIONAR PRODUTOS <Icon><i className="bi bi-cart-plus-fill"></i></Icon></Button>
         </Div>
       </Main>
     </Container>

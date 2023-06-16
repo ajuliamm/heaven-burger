@@ -24,3 +24,18 @@ export const Label = styled.label`
     color: #C18050;
     font-size: 16px;
 `;
+export const SelectRole = styled.select`
+     background-color:#C18050;
+     margin-left: 5px;
+     color: #451E12;
+     font-weight: 600;
+     width: 190px;
+     height: 28px;
+    border-radius: 3px;
+    outline: none;
+    margin-bottom: 5px;
+
+
+
+
+`;
