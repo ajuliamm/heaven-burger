@@ -17,7 +17,6 @@ import HandBurger from "../../img/burgerHandTwo.png";
 import ModalEx from "../../components/Modal/Modal";
 import UserContext from "../../contexts/UserContext";
 import SadBurger from "../../img/SadBurger.png";
-// import Button from "../../components/Button/Button";
 
 const BackOrders = () => {
   const { user } = useContext(UserContext);
@@ -30,28 +29,19 @@ const BackOrders = () => {
     setShowModal(true);
   };
 
-  // const closeModal = () => {
-  //   setShowModal(false);
-  // };
-
   useEffect(() => {
     async function fetchData() {
       try {
         const response = await getOrders();
-        console.log(response);
         const json = await response.json();
 
         if (Array.isArray(json)) {
           const filterOrder = json.filter(
             (order) => order.status === "pending"
           );
-          console.log(filterOrder);
           setAllOrdersPending(filterOrder);
         } else {
-          console.log(json);
-          setError(
-            "Ops! Tivemos um problema, atualize a página e tente novamente."
-          );
+          setError("Ops! Tivemos um problema, atualize a página e tente novamente.");
           openModal();
         }
       } catch (error) {

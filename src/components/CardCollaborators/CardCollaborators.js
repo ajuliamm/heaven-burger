@@ -11,6 +11,7 @@ const CardCollaborator = ({ eachUser }) => {
   const [showModalEdit, setShowModalEdit] = useState(false);
   const [showModalDel, setShowModalDel] = useState(false);
   const [cardVisible, setCardVisible] = useState(true);
+  const [eachUserData, setEachUserData] = useState(eachUser)
 
   const openModalEdit = () => {
     setShowModalEdit(true);
@@ -26,6 +27,15 @@ const CardCollaborator = ({ eachUser }) => {
     openModalEdit();
   };
 
+  const translateRole = (role) => {
+    const translate = {
+      admin: 'Administrador',
+      atend: 'Atendente',
+      chef: 'Chefe de Cozinha'
+    }
+    return translate[role];
+  }
+
   if (!cardVisible) {
     return null; //retorna null se o card não estiver visível
   }
@@ -33,26 +43,27 @@ const CardCollaborator = ({ eachUser }) => {
 
   return (
     <ContainerCard>
-      <InfosOrder> ID: {eachUser.id} </InfosOrder>
-      <InfosOrder> CARGO: {eachUser.role} </InfosOrder>
-      <InfosOrder> EMAIL: {eachUser.email} </InfosOrder>
+      <InfosOrder> ID: {eachUserData.id} </InfosOrder>
+      <InfosOrder> CARGO: {translateRole(eachUserData.role)} </InfosOrder>
+      <InfosOrder> EMAIL: {eachUserData.email} </InfosOrder>
       <DivButton>
         <Button
           id="cardCollaborator delete"
-          onClick={() => deleteUser(eachUser.id).then(openModalDel())}
+          onClick={() => deleteUser(eachUserData.id).then(openModalDel())}
         >
           EXCLUIR
         </Button>
         <Button
           id="cardCollaborator change"
-          onClick={() => alterUserModal(eachUser.id)}
+          onClick={() => alterUserModal(eachUserData.id)}
         >
           ALTERAR
         </Button>
       </DivButton>
       <ModalEditCollaborators
         className="edit"
-        eachUser={eachUser}
+        eachUserData={eachUserData}
+        setEachUserData = {setEachUserData}
         textH2="Alteração de Colaborador"
         showModal={showModalEdit}
         setShowModal={setShowModalEdit}

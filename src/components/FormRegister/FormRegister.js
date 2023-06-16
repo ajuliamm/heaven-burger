@@ -28,7 +28,6 @@ const Form = (props) => {
 
   function btnLogar(e) {
     e.preventDefault();
-    console.log(team.current.value)
     if (email.current.value === '' || password.current.value === '' || team.current.value === '...') {
       msgEmptyFild.current.classList.remove("hidden-p");
       msgErrorLogin.current.classList.add("hidden-p");
@@ -39,7 +38,6 @@ const Form = (props) => {
         email.current.value = '';
         password.current.value = '';
         team.current.value = '...';
-
     });
     }
   }

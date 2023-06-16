@@ -28,12 +28,6 @@ export const postRegister = (typedEmail, typedPassword, role) => {
       role: role,
     }),
   })
-    .then((response) => response.json()) //converter a resposta em json
-    .then((json) => console.log(json))
-    .catch((error) => {
-      console.log(error);
-      throw error;
-    });
 };
 
 export const listUsers = () => {

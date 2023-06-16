@@ -11,6 +11,8 @@ const CardProducts = ({ product }) => {
   const [showModal, setShowModal] = useState(false);
   const [cardVisible, setCardVisible] = useState(true);
   const [showModalDel, setShowModalDel] = useState(false);
+  const [productData, setProductData] = useState(product)
+  //criar estado com o valor do products
 
   const openModal = () => {
     setShowModal(true);
@@ -23,11 +25,14 @@ const CardProducts = ({ product }) => {
     openModal();
   };
 
-  const deleteItem = (item) => {
-    deleteProducts(item);
-    setTimeout(() => {
-      setCardVisible(false);
-    }, 1000);
+  const deleteItem = (productId) => {
+    deleteProducts(productId)
+    .then(()=>{
+      openModalDel()
+      setTimeout(() => {
+        setCardVisible(false);
+      }, 1500);
+    })
   }
   
   const translateType = (type) => {
@@ -48,14 +53,14 @@ const CardProducts = ({ product }) => {
   return (
     <Container>
       <Div />
-      <Infos>N° PRODUTO: {product.id}</Infos>
-      <Infos>NOME: {product.name}</Infos>
-      <Infos>PREÇO: {parseFloat(product.price).toFixed(2)}</Infos>
-      <Infos>TIPO: {translateType(product.type)}</Infos>
+      <Infos>N° PRODUTO: {productData.id}</Infos>
+      <Infos>NOME: {productData.name}</Infos>
+      <Infos>PREÇO: {parseFloat(productData.price).toFixed(2)}</Infos>
+      <Infos>TIPO: {translateType(productData.type)}</Infos>
       <Div className="buttons">
         <Button
           id="cardProduct delete"
-          onClick={() => deleteProducts(product.id).then(openModalDel())}
+          onClick={() => deleteItem(productData.id)}
         >
           EXCLUIR
         </Button>
@@ -68,7 +73,8 @@ const CardProducts = ({ product }) => {
       </Div>
       <ModalEdit
         className="edit"
-        product={product}
+        product={productData}
+        setProduct = {setProductData}
         textH2="Alteração de Produto"
         showModal={showModal}
         setShowModal={setShowModal}

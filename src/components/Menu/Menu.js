@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, DivFlex, H1, List, ImgIcon } from './Styles';
+import { Container, DivFlex, H1, List } from './Styles';
 import Button from '../../components/Button/Button';
 import ItemMenu from '../../components/ItemMenu/ItemMenu';
 import { getProducts } from '../../API/Products';
@@ -27,23 +27,20 @@ const Menu = ({ setListOrder, listOrder, setResume, resume }) => {
         if (Array.isArray(json)) {
           setAllProducts(json);
         } else {
-          console.log(json)
-          setError('Ops! Tivemos um problema, atualize a página e tente novamente.')        
-          openModal()
+          setError('Ops! Tivemos um problema, atualize a página e tente novamente.');     
+          openModal();
         }
-        
       } catch (error) {
         console.error(error);
       }
     }
-    fetchData()
+    fetchData();
   }, []);
 
   useEffect(
     () => {
       const openMenu =  () => {
         const filterProducts = allProducts.filter((product) => product.type === typeProducts)
-        console.log(typeof filterProducts)
         setDataProducts(filterProducts);
       };
       openMenu();
@@ -102,7 +99,6 @@ const Menu = ({ setListOrder, listOrder, setResume, resume }) => {
             price={product.price}
             key={product.id}
           />
-          //console.log(product, product.name, product.price, product.id)
         ))}
       </List>
       <ModalEx textH2={error} src={IconClose} showModal={showModal} setShowModal={setShowModal}/>

@@ -4,4 +4,7 @@ const setItens = (token) => {
 const getItens = () => {
     return localStorage.getItem("token")
 }
-export {setItens, getItens}
+const clearLocalStorage = () => {
+    localStorage.clear();
+}
+export {setItens, getItens, clearLocalStorage}

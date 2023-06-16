@@ -26,9 +26,7 @@ const CardOrder = ({order}) => {
 
   const finishedOrder = (orderId) => {
     updateStatusOrder(orderId, "finished")
-      .then((response) => response.json())
-      .then((json) => {
-        console.log(json);
+      .then(() => {
         openModal();
         setTimeout(() => {
           setCardVisible(false);
@@ -84,7 +82,7 @@ const CardOrder = ({order}) => {
       </InfosOrder>
       <OrderList>
         {order.products.map((product) => (
-          <ItemOrder>
+          <ItemOrder key={Math.random()}>
             {product.qty} - {product.product.name}{" "}
           </ItemOrder>
         ))}
@@ -108,7 +106,7 @@ const CardOrder = ({order}) => {
       >
         
         {order.delivered === 'delivered' || deliver ==='delivered'
-        ? (<><i class="bi bi-check-circle-fill"></i> <InfosOrder className="infoCheck">PEDIDO ENTREGUE</InfosOrder></>)
+        ? (<><i className="bi bi-check-circle-fill"></i> <InfosOrder className="infoCheck">PEDIDO ENTREGUE</InfosOrder></>)
         :(<><i className="bi bi-check-circle"></i> <InfosOrder className="infoCheck">ENTREGAR PEDIDO?</InfosOrder></>)
 
 

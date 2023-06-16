@@ -20,9 +20,7 @@ export const Products = () => {
     useEffect(() => {
         const gettingProducts = async () => {
             const response = await getProducts();
-            console.log(response);
             const data = await response.json()
-            console.log(data)
 
             if(Array.isArray(data)){ 
                 setAllProducts(data) 
@@ -35,7 +33,6 @@ export const Products = () => {
 
         }
         gettingProducts()
-        console.log(allProducts)
     },[])
     return(
         <Container>

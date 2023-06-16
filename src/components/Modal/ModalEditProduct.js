@@ -4,7 +4,10 @@ import { Input, Label, SelectTypeProduct, H2 } from "./Styles.js";
 import Button from "../Button/Button.js";
 import { updateProduct } from "../../API/Products.js";
 
-const ModalEdit = ({ product, textH2, showModal, setShowModal }) => {
+// Código necessário para os recursos de acessibilidade
+Modal.setAppElement('#root');
+
+const ModalEdit = ({ product, setProduct, textH2, showModal, setShowModal }) => {
   function closeModal() {
     setShowModal(false);
   }
@@ -31,8 +34,15 @@ const ModalEdit = ({ product, textH2, showModal, setShowModal }) => {
       price: valuePrice,
       type: valueType,
     };
-    updateProduct(product.id, infoChanges);
-    setShowModal(false);
+    updateProduct(product.id, infoChanges).then(()=>{
+      setProduct({
+        ...product,
+        price: valuePrice,
+        name: valueName,
+        type: valueType
+      })
+      setShowModal(false);
+    })    
   };
 
   return (
@@ -86,7 +96,7 @@ const ModalEdit = ({ product, textH2, showModal, setShowModal }) => {
           ></Input>
         </div>
         <div>
-          <Label placeholder="Hamburguer">Tipo:</Label>
+          <Label placeholder="Tipo">Tipo:</Label>
           <SelectTypeProduct value={valueType} onChange={changeType}>
             <option value="breakfast">CAFÉ DA MANHÃ</option>
             <option value="appetizers">APERITIVOS</option>
