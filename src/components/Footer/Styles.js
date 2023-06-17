@@ -7,23 +7,29 @@ export const StyledFooter = styled.footer`
     height: 50px;
     color:#834a2f;
     font-weight:500;
-    padding: 20px;
+    padding: 0 5px;
     border-radius: 10px;
     cursor: pointer;
+    margin-bottom: 5px;
 
     &:hover{
-        background-color: #834a2f;
-        color:#E38B26;
+        background-color: #451E12;
+        color:rgb(233, 147, 49);
+        transition: background-color 1s linear;
+        -webkit-transition: background-color 1s;
     }
     &:hover::before{
         font-size:13px;
-        color: brown;
+        color: #451E12;
         content: "clique aqui para nos conhecer";
         position: absolute;
         top: -18px;
         left: 10;
-
+        transition: font-size 01s linear;
+        -webkit-transition:font-size 1s;
     }
+
+    
 
     @media(min-width:850px){
         position: absolute;

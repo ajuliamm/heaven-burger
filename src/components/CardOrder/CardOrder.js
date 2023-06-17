@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import UserContext from "../../contexts/UserContext";
+import OrdersContext from "../../contexts/OrdersContext";
 import { updateStatusOrder, updateDeliveredOrder } from "../../API/Orders";
 import checkIcon from "../../img/icon_check.png";
 import ModalEx from '../Modal/Modal';
@@ -16,6 +17,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 
 const CardOrder = ({order}) => {
   const { user } = useContext(UserContext);
+  const { updateOrders} = useContext(OrdersContext);
   const [deliver, setDeliver] = useState('notDelivered');
   const [showModal, setShowModal] = useState(false);
   const [cardVisible, setCardVisible] = useState(true);
@@ -31,7 +33,7 @@ const CardOrder = ({order}) => {
         setTimeout(() => {
           setCardVisible(false);
         }, 2000);
-        
+        updateOrders();        
       })
       .catch((error) => {
         console.log(error);
@@ -65,6 +67,7 @@ const CardOrder = ({order}) => {
   const checkOrderDelivered = (orderId) => {
     updateDeliveredOrder(orderId, 'delivered');
     setDeliver('delivered');
+    updateOrders();
   };
 
   if (!cardVisible) {

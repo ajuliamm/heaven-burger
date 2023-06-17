@@ -15,29 +15,32 @@ import Products from './pages/adm/Products/Products';
 import Collaborators from './pages/adm/Collaborators/Collaborators';
 import Devs from './pages/devs/Devs'
 import { UserProvider } from './contexts/UserContext';
+import { OrdersProvider } from './contexts/OrdersContext';
 
 
-export default function MyRoutes(){
+export default function MyRoutes() {
     return (
         <UserProvider>
-            <Router>
-                <Routes>
-                    <Route path='/' element={<HomeScreen/>}/> 
-                    <Route path='/Login' element={<Login/>}/>
-                    <Route path='/Register' element={<Register/>}/>
-                    <Route path='/HomeWaiter' element={<HomeWaiter/>}/>
-                    <Route path='HomeChef' element={<HomeChef/>}/>
-                    <Route path='HomeAdm' element={<HomeAdm/>}/>
-                    <Route path='/NewOrder' element={<NewOrder/>}/>
-                    <Route path='/BackOrders' element={<BackOrders/>}/>
-                    <Route path='/FinishedOrders' element={<FinishedOrders/>}/>
-                    <Route path='/Add' element={<Add/>}/>
-                    <Route path='/AddProducts' element={<AddProducts/>}/>
-                    <Route path='/Products' element={<Products/>}/>
-                    <Route path='/Collaborators' element={<Collaborators/>}/>
-                    <Route path='/Devs' element={<Devs/>}/>
-                </Routes>
-            </Router>
+            <OrdersProvider>
+                <Router>
+                    <Routes>
+                        <Route path='/' element={<HomeScreen />} />
+                        <Route path='/Login' element={<Login />} />
+                        <Route path='/Register' element={<Register />} />
+                        <Route path='/HomeWaiter' element={<HomeWaiter />} />
+                        <Route path='HomeChef' element={<HomeChef />} />
+                        <Route path='HomeAdm' element={<HomeAdm />} />
+                        <Route path='/NewOrder' element={<NewOrder />} />
+                        <Route path='/BackOrders' element={<BackOrders />} />
+                        <Route path='/FinishedOrders' element={<FinishedOrders />} />
+                        <Route path='/Add' element={<Add />} />
+                        <Route path='/AddProducts' element={<AddProducts />} />
+                        <Route path='/Products' element={<Products />} />
+                        <Route path='/Collaborators' element={<Collaborators />} />
+                        <Route path='/Devs' element={<Devs />} />
+                    </Routes>
+                </Router>
+            </OrdersProvider>
         </UserProvider>
     );
 }

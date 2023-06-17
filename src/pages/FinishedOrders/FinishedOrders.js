@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useContext } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import CardOrder from "../../components/CardOrder/CardOrder";
-import { getOrders } from "../../API/Orders";
 import SadBurger from "../../img/SadBurger.png";
 import HandBurger from "../../img/burgerHandTwo.png";
 import UserContext from "../../contexts/UserContext";
 import Modal from "../../components/Modal/Modal";
 import IconClose from "../../img/IconClose.svg";
+import OrdersContext from "../../contexts/OrdersContext";
 
 import {
   Container,
@@ -21,6 +21,8 @@ import {
 
 const FinishedOrders = () => {
 
+  const { orders } = useContext(OrdersContext);
+
   const [allOrdersFinished, setAllOrdersFinished] = useState([]);
   const { user } = useContext(UserContext);
   const [error, setError] = useState("");
@@ -33,11 +35,8 @@ const FinishedOrders = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await getOrders();
-        const json = await response.json();
-
-        if (Array.isArray(json)) {
-          const filterOrder = json.filter(
+        if (Array.isArray(orders)) {
+          const filterOrder = orders.filter(
             (order) => order.status === "finished"
           );
           setAllOrdersFinished(filterOrder);
@@ -50,7 +49,7 @@ const FinishedOrders = () => {
       }
     }
     fetchData();
-  }, []);
+  }, [orders]);
 
   return (
     <Container>

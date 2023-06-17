@@ -20,7 +20,7 @@ const Register = () => {
     return (
         <Container backgroundColor= '#E99331'>
             <ImageLogo src={LogoBrown}/>
-            <FormRegister text='CADASTRO'  class='register' classSelect='active' textButton='CADASTRAR'/>
+            <FormRegister text='CADASTRO COLABORADOR'  class='register' classSelect='active' textButton='CADASTRAR'/>
         </Container>
     )
 }
