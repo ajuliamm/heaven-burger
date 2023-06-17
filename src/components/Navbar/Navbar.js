@@ -10,11 +10,10 @@ import { clearLocalStorage } from '../../utils/token.js';
 
  const Navbar = ({role}) => {
  
-
     const navigate = useNavigate();
 
-    const { user } = useContext(UserContext) 
-    const {orders} = useContext(OrdersContext);
+    const { user } = useContext(UserContext) ;
+    const { orders } = useContext(OrdersContext);
 
     function backToHomeScreen(e) {
         e.preventDefault();
@@ -55,12 +54,12 @@ import { clearLocalStorage } from '../../utils/token.js';
             </Div>
             <Div>
                 <Button role='botão' className='backOrders' aria-label='Clique para ver pedidos em andamento' onClick={changeToBackOrders}>
-                    {orders.some(order => order.status === 'pending') ? <><i className='bi bi-stopwatch'></i><I className="bi bi-circle-fill"></I></> : <i className='bi bi-stopwatch'></i>}
+                    {orders.length > 0 && orders.some(order => order.status === 'pending') ? <><i className='bi bi-stopwatch'></i><I className="bi bi-circle-fill"></I></> : <i className='bi bi-stopwatch'></i>}
                 </Button>
             </Div>
             <Div>
                 <Button role='botão' className='finishedOrders' aria-label='Clique para ver pedidos finalizados' onClick={changeToFinishedOrders}>
-                    {orders.some(order => order.status === 'finished') ? <><i className='bi bi-check2-circle'></i><I className="bi bi-circle-fill"></I></> : <i className='bi bi-check2-circle'></i>}
+                    {orders.length > 0 && orders.some(order => order.status === 'finished') ? <><i className='bi bi-check2-circle'></i><I className="bi bi-circle-fill"></I></> : <i className='bi bi-check2-circle'></i> }
                 </Button>
             </Div>
             <Div>
