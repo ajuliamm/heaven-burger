@@ -12,14 +12,15 @@ import {
 import Navbar from "../../components/Navbar/Navbar";
 import CardOrder from "../../components/CardOrder/CardOrder";
 import IconClose from "../../img/IconClose.svg";
-import { getOrders } from "../../API/Orders";
 import HandBurger from "../../img/burgerHandTwo.png";
 import ModalEx from "../../components/Modal/Modal";
 import UserContext from "../../contexts/UserContext";
+import OrdersContext from "../../contexts/OrdersContext";
 import SadBurger from "../../img/SadBurger.png";
 
 const BackOrders = () => {
   const { user } = useContext(UserContext);
+  const { orders } = useContext(OrdersContext);
 
   const [allOrdersPending, setAllOrdersPending] = useState([]);
   const [error, setError] = useState("");
@@ -32,11 +33,8 @@ const BackOrders = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await getOrders();
-        const json = await response.json();
-
-        if (Array.isArray(json)) {
-          const filterOrder = json.filter(
+         if (Array.isArray(orders)) {
+          const filterOrder = orders.filter(
             (order) => order.status === "pending"
           );
           setAllOrdersPending(filterOrder);
@@ -49,7 +47,7 @@ const BackOrders = () => {
       }
     }
     fetchData();
-  }, []);
+  }, [orders]);
 
   return (
     <Container>

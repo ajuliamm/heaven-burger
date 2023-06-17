@@ -8,7 +8,7 @@ import Button from "../Button/Button";
 import Input from "../Input/Input";
 import ModalEx from "../Modal/Modal";
 import SadBurger from "../../img/SadBurger.png";
-
+import OrdersContext from '../../contexts/OrdersContext';
 import {
   H1,
   Container,
@@ -28,6 +28,9 @@ const OrderResume = ({ setResume, resume }) => {
   const [sumPrice, setSumPrice] = useState(0);
   const { user } = useContext(UserContext) || {}; // Verifica se UserContext é undefined
   const [showModal, setShowModal] = useState(false);
+
+  const {orders, updateOrders} = useContext(OrdersContext);
+  console.log(orders)
 
   const openModal = () => {
     setShowModal(true);
@@ -92,6 +95,7 @@ const OrderResume = ({ setResume, resume }) => {
         setResume([]);
         openModal();
         clientName.current.value = "";
+        updateOrders();
       });
     }
   }

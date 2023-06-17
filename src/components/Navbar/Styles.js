@@ -32,6 +32,15 @@ export const Nav = styled.nav`
 `;
 export const Div = styled.div`
     position:relative;
+    &.chef{
+        display: none;
+    }
+`;
+export const I = styled.i`
+    color: green;
+    font-size: 10px;
+    margin-left: -8px;
+    
 `;
 
 export const Button = styled.button`
