@@ -43,7 +43,7 @@ import { clearLocalStorage } from '../../utils/token.js';
 
     return (
     <Header>
-        <Button className='home' onClick={backToHomeScreen}>
+        <Button className='home' onClick={backToHomeScreen} role='botão' aria-label='Clique para voltar para o home' >
             <ImageLogo logoDesktop='logoDesktop' src={LogoBege} />
         </Button>
         <Nav>                    

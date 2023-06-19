@@ -4,18 +4,15 @@ import { getOrders } from "../API/Orders";
 const OrdersContext = createContext();
 
 export const OrdersProvider = ({ children }) => {
-    const [orders, setOrders] = useState([]); // Inicialize como um array vazio
+    const [orders, setOrders] = useState([]);
   
-    // const addOrders = (arrOrders) => {
-    //   setAllOrders(arrOrders);
-    // };
     useEffect(() => {
         fetchOrders();
       }, []);
     
       const fetchOrders = async () => {
         try {
-          const response = await getOrders(); // Função que faz a requisição à API de pedidos
+          const response = await getOrders(); 
           const data = await response.json();
           setOrders(data);
         } catch (error) {
