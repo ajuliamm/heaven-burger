@@ -54,12 +54,12 @@ import { clearLocalStorage } from '../../utils/token.js';
             </Div>
             <Div>
                 <Button role='botão' className='backOrders' aria-label='Clique para ver pedidos em andamento' onClick={changeToBackOrders}>
-                    {orders.length > 0 && orders.some(order => order.status === 'pending') ? <><i className='bi bi-stopwatch'></i><I className="bi bi-circle-fill"></I></> : <i className='bi bi-stopwatch'></i>}
+                    {Array.isArray(orders) && orders.some(order => order.status === 'pending') ? <><i className='bi bi-stopwatch'></i><I className="bi bi-circle-fill"></I></> : <i className='bi bi-stopwatch'></i>}
                 </Button>
             </Div>
             <Div>
                 <Button role='botão' className='finishedOrders' aria-label='Clique para ver pedidos finalizados' onClick={changeToFinishedOrders}>
-                    {orders.length > 0 && orders.some(order => order.status === 'finished') ? <><i className='bi bi-check2-circle'></i><I className="bi bi-circle-fill"></I></> : <i className='bi bi-check2-circle'></i> }
+                    {Array.isArray(orders) && orders.some(order => order.status === 'finished') ? <><i className='bi bi-check2-circle'></i><I className="bi bi-circle-fill"></I></> : <i className='bi bi-check2-circle'></i> }
                 </Button>
             </Div>
             <Div>

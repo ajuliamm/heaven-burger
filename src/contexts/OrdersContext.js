@@ -7,19 +7,9 @@ export const OrdersProvider = ({ children }) => {
     const [orders, setOrders] = useState([]);
   
     useEffect(() => {
-        fetchOrders();
+        updateOrders();
       }, []);
     
-      const fetchOrders = async () => {
-        try {
-          const response = await getOrders(); 
-          const data = await response.json();
-          setOrders(data);
-        } catch (error) {
-          console.error(error);
-        }
-      };
-
       const updateOrders = async () => {
         try {
           const response = await getOrders();

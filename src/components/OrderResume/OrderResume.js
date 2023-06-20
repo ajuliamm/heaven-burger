@@ -29,8 +29,7 @@ const OrderResume = ({ setResume, resume }) => {
   const { user } = useContext(UserContext) || {}; // Verifica se UserContext é undefined
   const [showModal, setShowModal] = useState(false);
 
-  const {orders, updateOrders} = useContext(OrdersContext);
-  console.log(orders)
+  const {updateOrders} = useContext(OrdersContext);
 
   const openModal = () => {
     setShowModal(true);

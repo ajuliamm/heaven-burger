@@ -1,7 +1,6 @@
 import { getItens } from "../utils/token";
 
 const API_URL = 'https://heaven-burger-api-mock.vercel.app';
-const AUTH_TOKEN = getItens();
 
 export const getProducts = () => {
     return fetch(`${API_URL}/products`, {
@@ -9,7 +8,7 @@ export const getProducts = () => {
         method: "GET",
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${AUTH_TOKEN}`,
+            'Authorization': `Bearer ${getItens()}`,
         },
 
     })
@@ -21,7 +20,7 @@ export const deleteProducts = (productId) => {
         method: "DELETE",
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${AUTH_TOKEN}`,
+            'Authorization': `Bearer ${getItens()}`,
         },
     })
     
@@ -31,7 +30,7 @@ export const updateProduct = (productId, newInfos) => {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${AUTH_TOKEN}`,
+        "Authorization": `Bearer ${getItens()}`,
       },
       body: JSON.stringify(newInfos),
       
@@ -43,7 +42,7 @@ export const updateProduct = (productId, newInfos) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${AUTH_TOKEN}`,
+        "Authorization": `Bearer ${getItens()}`,
       },
       body: JSON.stringify({
         name: nameProduct,

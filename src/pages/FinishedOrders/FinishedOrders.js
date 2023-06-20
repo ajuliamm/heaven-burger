@@ -36,9 +36,7 @@ const FinishedOrders = () => {
     async function fetchData() {
       try {
         if (Array.isArray(orders)) {
-          const filterOrder = orders.filter(
-            (order) => order.status === "finished"
-          );
+          const filterOrder = orders.filter((order) => order.status === "finished");
           setAllOrdersFinished(filterOrder);
         } else {
           setError("Ops! Tivemos um problema, atualize a página e tente novamente.");

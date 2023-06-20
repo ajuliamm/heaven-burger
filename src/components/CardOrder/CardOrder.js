@@ -67,7 +67,6 @@ const CardOrder = ({order}) => {
   const checkOrderDelivered = (orderId) => {
     updateDeliveredOrder(orderId, 'delivered');
     setDeliver('delivered');
-    updateOrders();
   };
 
   if (!cardVisible) {

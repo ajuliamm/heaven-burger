@@ -1,7 +1,6 @@
 import { getItens } from "../utils/token";
 
 const API_URL = "https://heaven-burger-api-mock.vercel.app";
-const AUTH_TOKEN = getItens();
 
 export const postLogin = (typedEmail, typedPassword) => {
   return fetch(`${API_URL}/login`, {
@@ -35,7 +34,7 @@ export const listUsers = () => {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      'Authorization': `Bearer ${AUTH_TOKEN}`,
+      'Authorization': `Bearer ${getItens()}`,
     },
   });
 };
@@ -45,7 +44,7 @@ export const deleteUser = (id) => {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
-      'Authorization': `Bearer ${AUTH_TOKEN}`,
+      'Authorization': `Bearer ${getItens()}`,
     },
   });
 };
@@ -56,7 +55,7 @@ export const alterUser = (id, newAlter) => {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
-      'Authorization': `Bearer ${AUTH_TOKEN}`,
+      'Authorization': `Bearer ${getItens()}`,
     },
     body: JSON.stringify(newAlter),
   });
