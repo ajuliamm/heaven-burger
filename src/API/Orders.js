@@ -1,7 +1,6 @@
 import { getItens } from "../utils/token";
 
 const API_URL = "https://heaven-burger-api-mock.vercel.app";
-const AUTH_TOKEN = getItens();
 
 export const postOrders = (userId, client, arrProducts, dateOrder) => {
 
@@ -9,7 +8,7 @@ export const postOrders = (userId, client, arrProducts, dateOrder) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${AUTH_TOKEN}`,
+      Authorization: `Bearer ${getItens()}`,
     },
     body: JSON.stringify({
       userId: userId,
@@ -27,7 +26,7 @@ export const getOrders = () => {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${AUTH_TOKEN}`,
+      "Authorization": `Bearer ${getItens()}`,
     }
   })
     
@@ -39,7 +38,7 @@ export const updateStatusOrder = (orderId, newStatus) => {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${AUTH_TOKEN}`,
+      "Authorization": `Bearer ${getItens()}`,
     },
     body: JSON.stringify({
       status: newStatus,
@@ -53,7 +52,7 @@ export const updateDeliveredOrder = (orderId, deliveredAnswer) => {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${AUTH_TOKEN}`,
+      "Authorization": `Bearer ${getItens()}`,
     },
     body: JSON.stringify({
       delivered: deliveredAnswer,
