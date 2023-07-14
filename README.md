@@ -1,6 +1,6 @@
 # Heaven Burger :hamburger: :fries:
 
-Quinto projeto desenvolvido para o Bootcamp de Desenvolvimento Web da [@Laboratória](https://www.laboratoria.la/br). O objetivo consiste em uma interface voltada para o gerenciamento de uma hamburgueria. Nesta aplicação, usou-se a integração com API e o framework React.
+O objetivo da aplicação consiste em uma interface voltada para o gerenciamento de uma hamburgueria. Nesta aplicação, usou-se a integração com API e o framework React.
 ***
 <div align="center">
   
